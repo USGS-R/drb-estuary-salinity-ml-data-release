@@ -1,0 +1,34 @@
+# Do not edit - automatically generated
+# from the task_makefile.mustache template
+# by create_task_makefile() via do_item_replace_tasks()
+
+target_default: file_upload_tasks
+
+packages:
+  - sbtools
+  - scipiper
+  - dplyr
+  - remake
+
+sources:
+  - src/sb_utils.R
+
+file_extensions:
+  - "ind"
+
+targets:
+  file_upload_tasks:
+    depends:
+      - upload_5faaac68d34eb413d5df1f22_timestamps
+
+  # --- sb_5faaac68d34eb413d5df1f22_cars.csv_file --- #
+  
+  sb_5faaac68d34eb413d5df1f22_cars.csv_file:
+    command: upload_and_record(I('5faaac68d34eb413d5df1f22'), 'out_data/cars.csv')
+
+  # --- Overall job --- #
+
+  upload_5faaac68d34eb413d5df1f22_timestamps:
+    command: bind_rows(
+      `sb_5faaac68d34eb413d5df1f22_cars.csv_file`)
+    

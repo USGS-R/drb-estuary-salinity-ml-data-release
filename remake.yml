@@ -9,6 +9,7 @@ packages:
 sources:
   - src/sb_utils.R
   - src/file_utils.R
+  - src/read_spf.R
 
 targets:
   all:
@@ -21,35 +22,40 @@ targets:
   # you will need to find a shapefile that represents the geographic area or your data release
   # upload this file to your pipeline repostiory, read it in with the read_spatial_file function below, and extract_feature will pull the necessary metadata
   # you do NOT need to upload this file to ScienceBase  with the sf_to_zip function if it was not a planned part of your data release
-  sf_spatial_data:
-    command: st_read('example_data/example_shapefile/example_shapefile.shp')
-    depends:
-      - example_data/example_shapefile/example_shapefile.dbf
-      - example_data/example_shapefile/example_shapefile.prj
-      - example_data/example_shapefile/example_shapefile.shx
+  #sf_spatial_data:
+    #command: sf::st_read('in_data/drb_bounds/drb.shp')
+    #depends:
+      #- in_data/drb_bounds/drb.dbf
+      #- in_data/drb_bounds/drb.prj
+      #- in_data/drb_bounds/drb.shx
+    
+  #sf_spatial_data:  
+    #command: read_spf("in-data/drb_bounds/drb.shp")
+    #depends:
+      #- in-data/drb_bounds/drb.dbf
+      #- in-data/drb_bounds/drb.prj
+      #- in-data/drb_bounds/drb.shx
   
   # grab metadata from spatial file
-  spatial_metadata:
-    command: meddle::extract_feature(sf_spatial_data)
+  #spatial_metadata:
+    #command: extract_feature(sf_spatial_data)
     
   out_data/cars.csv:
     command: file.copy(from = "example_data/example_cars.csv", 
       to = target_name, overwrite = TRUE)
   
-  out_data/spatial.zip:
-    command: sf_to_zip(zip_filename = target_name, 
-      sf_object = sf_spatial_data, layer_name = I('spatial_data'))
+  #out_data/spatial.zip:
+    #command: sf_to_zip(zip_filename = target_name, 
+      #sf_object = sf_spatial_data, layer_name = I('spatial_data'))
 
-  out_xml/fgdc_metadata.xml:
-    command: render(filename = target_name,
-      "in_text/text_data_release.yml",
-      spatial_metadata)
+  # out_xml/fgdc_metadata.xml:
+    # command: render(filename = target_name,
+      #"in_text/text_data_release.yml",
+      #spatial_metadata)
     
   log/sb_posted_files.csv:
-    command: sb_replace_files_log(filename = target_name, 
+    command: sb_replace_files(filename = target_name, 
       sb_id = I('5faaac68d34eb413d5df1f22'),
-      "out_data/spatial.zip",
       "out_data/cars.csv",
-      "out_xml/fgdc_metadata.xml",
       sources = "src/sb_utils.R")
       

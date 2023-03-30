@@ -103,7 +103,7 @@ do_item_replace_tasks <- function(sb_id, files, sources) {
 upload_and_record <- function(sb_id, filepath) {
   
   # First verify that you are logged into SB. Need to do this for each task that calls 
-  sb_secret_login()
+  #sb_secret_login()
   
   # Second, upload the file
   item_replace_files(sb_id, files = filepath)
@@ -128,7 +128,7 @@ upload_and_record <- function(sb_id, filepath) {
 #' or if any duplicated file names exist on sciencebase for this `sb_id`. 
 verify_uploads <- function(file_tbl, tgt_names, remake_file){
   
-  sb_secret_login()
+  #sb_secret_login()
   sb_id <- unique(file_tbl$sb_id)
   # this call is not robust to a tbl w/ more than one unique sb_id
   stopifnot(length(sb_id) == 1)
@@ -157,9 +157,9 @@ verify_uploads <- function(file_tbl, tgt_names, remake_file){
 #' 
 #' @details can avoid `dssecrets` usage sbtools::authenticate_sb('[my_sb_user]'), 
 #' as long as you have permission to edit the item(s)
-sb_secret_login <- function(){
-  if (!sbtools::is_logged_in()){
-    sb_secret <- dssecrets::get_dssecret("cidamanager-sb-srvc-acct")
-    sbtools::authenticate_sb(username = sb_secret$username, password = sb_secret$password)
-  }
-}
+#sb_secret_login <- function(){
+  #if (!sbtools::is_logged_in()){
+    #sb_secret <- dssecrets::get_dssecret("cidamanager-sb-srvc-acct")
+    #sbtools::authenticate_sb(username = sb_secret$username, password = sb_secret$password)
+  #}
+#}
