@@ -1,12 +1,12 @@
 title: >-
-  Data release: [your title here]
+  Data release: [Using deep learning and hydrodynamic modeling to understand and simulate salinity dynamics in the Delaware Bay ]
 
 
 abstract: >-
-  [a description of this data release]
+  [Salinity dynamics in the Delaware Bay estuary are a critical water quality concern as elevated salinity can damage infrastructure and threaten drinking water supplies. Current state-of-the-art modeling approaches use hydrodynamic models, which can produce accurate results but are limited by significant computational costs. We developed a machine learning (ML) model to predict the 250 mg/L Cl- isochlor, also known as the “salt front”, using daily river discharge, meteorological drivers, and tidal water level data. We use the ML model to predict the location of the salt front, measured in river miles (RM) along the Delaware River, during the period 2001-2020, and we compare the ML model results to results from the hydrodynamic Coupled Ocean Atmospheric Wave Sediment Transport (COAWST) model. The ML model shows RMSE = 2.52 RM during the five-year holdout period, superior to three overlapping years of COAWST model predictions, RMSE = 5.36 RM, however the ML model struggles to predict extreme events. Further, we use functional performance and expected gradients, tools from information theory and explainable artificial intelligence, to show that the ML model learns physically realistic relationships between the salt front location and drivers (particularly discharge and tidal water level). These results demonstrate how an ML modeling approach can provide predictive and functional accuracy at a significantly reduced computational cost compared to process-based models. Additionally, these results provide support for using ML models for applications in operational forecasting, scenario testing, management decision making, hindcasting, and resulting opportunities to understand past behavior and develop hypotheses. ]
       
-authors: ["[NAME 1]", "[NAME 2]"]
-pubdate: 2020 # replace with actual year, e.g., 2020
+authors: ["[Galen Gorski]", "[Galen Gorski]", "[Amelia Snyder]", "[Alison P. Appling]", "[Alison P. Appling]", "[Theodore Thompson]", "[Jared D. Smith]", "[John C. Warner]", "[Simon N. Topp]"]
+pubdate: 2023 # replace with actual year, e.g., 2020
 doi: https://doi.org/YY.XXXXX/XXXXXX # replace with actual DOI
 
 build-environment: Multiple computer systems were used to generate these data, including linux, OSX. The open source languages R and Python were used on all systems.
@@ -29,65 +29,208 @@ cross-cites:
     link: http://dx.doi.org/10.1038/sdata.2017.53
 
 process-date: !expr format(Sys.time(),'%Y%m%d')
-file-format: a single comma-delimited file and a single zipped shapefile
+file-format: Four zipped folders and associated files.
 
 entities:
   -
-    data-name: example_cars.csv
-    data-description: A csv file containing important information...
+    data-name: 01_fetch.zip
+    data-description: A zipped file containing code to retrieve data for machine learning model.
     attributes:
     -
-      attr-label: speed
-      attr-def: definition of column_name_1
+      attr-label: in
+      attr-def: A folder to hold a casv of estuary salt front by river mile. 
       attr-defs: >-
         citation or URL of column_name_1. If citation, should appear in cross-cites. Can use NA or "This release"
       data-min: NA
       data-max: NA
       data-units: NA
     -
-      attr-label: dist
-      attr-def: definition of column_name_2
+      attr-label: src
+      attr-def: A folder containing python scripts for fetching and processing model data.
       attr-defs: >-
         citation or URL of column_name_2. If citation, should appear in cross-cites. Can use NA or "This release"
       data-min: NA
       data-max: NA
       data-units: NA
-  -
-    data-name: example_shapefile.zip
-    data-description: A zip file containing...
-    attributes:
     -
-      attr-label: x
-      attr-def: definition of x
+      attr-label: params_config_fetch_coawst_model.yaml
+      attr-def: A configuration file for retrieving COAWST model data.
       attr-defs: >-
         citation or URL of x. If citation, should appear in cross-cites. Can use NA or "This release"
       data-min: NA
       data-max: NA
       data-units: NA  
     -
-      attr-label: y
-      attr-def: definition of y
+      attr-label: params_config_fetch_noaa_nerrs.yaml
+      attr-def: A configuration file defining read, write and save location of NOAA NERRS data.
       attr-defs: >-
         citation or URL of y. If citation, should appear in cross-cites. Can use NA or "This release"
       data-min: NA
       data-max: NA
       data-units: NA
     -
-      attr-label: z
-      attr-def: definition of z
+      attr-label: params_config_fetch_noaa_nos.yaml
+      attr-def: A configuration file for retrieving NOAA NOS data.
       attr-defs: >-
         citation or URL of z. If citation, should appear in cross-cites. Can use NA or "This release"
       data-min: NA
       data-max: NA
       data-units: NA
+    -
+      attr-label: params_config_fetch_usgs_nwis.yaml
+      attr-def: A configuration file defining read, write and save location of USGS NWIS data.
+      attr-defs: >-
+        citation or URL of z. If citation, should appear in cross-cites. Can use NA or "This release"
+      data-min: NA
+      data-max: NA
+      data-units: NA
+    -
+      attr-label: wildcards_fetch_config.yaml
+      attr-def: A configuration file containing parameters to download NOAA NOS, NOAA NERRS and USGS NWIS data.
+      attr-defs: >-
+        citation or URL of z. If citation, should appear in cross-cites. Can use NA or "This release"
+      data-min: NA
+      data-max: NA
+      data-units: NA
+  -
+    data-name: 02_munge.zip
+    data-description: A zip file containing python scripts and configuration files to process data for model.
+    attributes: 
+    -
+      attr-label: src
+      attr-def: A folder containing python scripts to process retrieved data for model.
+      attr-defs: >-
+        citation or URL of x. If citation, should appear in cross-cites. Can use NA or "This release"
+      data-min: NA
+      data-max: NA
+      data-units: NA  
+    -
+      attr-label: params_config_fill_discharge_prms.yaml
+      attr-def: A configuration file for specifying which items to pull from ScienceBase to fill discharge at Trenton and Schuykill.
+      attr-defs: >-
+        citation or URL of y. If citation, should appear in cross-cites. Can use NA or "This release"
+      data-min: NA
+      data-max: NA
+      data-units: NA
+    -
+      attr-label: params_config_munge_coawst_model.yaml
+      attr-def: A configuration file for retrieving and subsetted COAWST model data.
+      attr-defs: >-
+        citation or URL of z. If citation, should appear in cross-cites. Can use NA or "This release"
+      data-min: NA
+      data-max: NA
+      data-units: NA
+    -
+      attr-label: params_config_munge_noaa_nerrs.yaml
+      attr-def: A configuration file for processing NOAA NERRS data.
+      attr-defs: >-
+        citation or URL of z. If citation, should appear in cross-cites. Can use NA or "This release"
+      data-min: NA
+      data-max: NA
+      data-units: NA
+    -
+      attr-label: params_config_munge_noaa_nos.yaml
+      attr-def: A configuration file for processing NOAA NOS data.
+      attr-defs: >-
+        citation or URL of z. If citation, should appear in cross-cites. Can use NA or "This release"
+      data-min: NA
+      data-max: NA
+      data-units: NA
+    -
+      attr-label: params_config_munge_usgs_nwis.yaml
+      attr-def: A configuration file for processing USGS NWIS data.
+      attr-defs: >-
+        citation or URL of z. If citation, should appear in cross-cites. Can use NA or "This release"
+      data-min: NA
+      data-max: NA
+      data-units: NA
+ -
+    data-name: 03_model.zip
+    data-description: A zip file containing python scripts, workflow files and configuration files for information theory analysis.
+    attributes: 
+    -
+      attr-label: in
+      attr-def: A folder containing a csv of daily salt front averages, weekly salt front averages and processed COAWST model output.
+      attr-defs: >-
+        citation or URL of x. If citation, should appear in cross-cites. Can use NA or "This release"
+      data-min: NA
+      data-max: NA
+      data-units: NA  
+    -
+      attr-label: src
+      attr-def: A folder containing python scripts to run machine learning model.
+      attr-defs: >-
+        citation or URL of y. If citation, should appear in cross-cites. Can use NA or "This release"
+      data-min: NA
+      data-max: NA
+      data-units: NA
+    -
+      attr-label: out/Run_Manuscript_Results
+      attr-def: A folder containing the machine learning model output.
+      attr-defs: >-
+        citation or URL of z. If citation, should appear in cross-cites. Can use NA or "This release"
+      data-min: NA
+      data-max: NA
+      data-units: NA
+    -
+      attr-label: hyperparameter_config.yaml
+      attr-def: A configuration file for hyperparameter optimization.
+      attr-defs: >-
+        citation or URL of z. If citation, should appear in cross-cites. Can use NA or "This release"
+      data-min: NA
+      data-max: NA
+      data-units: NA
+    -
+      attr-label: model_config.yaml
+      attr-def: A configuration file for running machine learning model.
+      attr-defs: >-
+        citation or URL of z. If citation, should appear in cross-cites. Can use NA or "This release"
+      data-min: NA
+      data-max: NA
+      data-units: NA
+ -
+    data-name: 04_analysis.zip
+    data-description: A zip file containing python scripts and configuration files for measuring the functional performance of the machine learning model.
+    attributes: 
+    -
+      attr-label: src
+      attr-def: A folder containing python scripts to run information theory analysis.
+      attr-defs: >-
+        citation or URL of y. If citation, should appear in cross-cites. Can use NA or "This release"
+      data-min: NA
+      data-max: NA
+      data-units: NA
+ -
+    data-name: README.md
+    data-description: A markdown file detailing how to run the included workflow.
+    attributes: 
+ -
+    data-name: Snakefile_fetch_munge
+    data-description: A snakemake workflow used to fetch and process data for machine learning model.
+    attributes: 
+ -
+    data-name: Snakefile_model_analysis
+    data-description: A snakemake workflow used to run information theory analysis.
+    attributes:
+ -
+    data-name: Snakefile_run_ml_model
+    data-description: A snakemake workflow used to run machine learning model.
+    attributes:
+ -
+    data-name: environment.yaml
+    data-description: An environment yaml for creating a conda environment with the necessary libraries.
+    attributes:
+ -
+    data-name: utils.py
+    data-description: A python script with helper functions for retrieving and processing data.
+    attributes:
 
-
-purpose: Fisheries biology, limnological research, and climate science.
-start-date: 19800401
+purpose: hydrology, oceanography and climate science.
+start-date: 20160101
 end-date: 20191231
 
 update: none planned
-themekeywords: ["machine learning", "deep learning", "hybrid modeling", "water","temperature", "temperate lakes","reservoirs","modeling","climate change","thermal profiles"]
+themekeywords: ["machine learning", "deep learning", "hybrid modeling", "water","salt front", "Delaware River Basin","reservoirs","modeling","climate change"]
 
 usage-rules: >-
   These data are open access usable via creative commons as long as original data providers are acknowledged
@@ -98,35 +241,35 @@ latitude-res: 0.00001
 longitude-res: 0.00001
 
 # ----contacts----
-contact-person: Jordan S. Read
-contact-phone: 608-821-3922
-contact-email: jread@usgs.gov
-contact-position: Research Civil Engineer
-contact-address: "8505 Research Way"
-contact-city: Middleton
-contact-state: WI
-contact-zip: 53562
+contact-person: Galen A. Gorski
+contact-phone: 
+contact-email: ggorski@usgs.gov
+contact-position: Machine Learning Specialist
+contact-address: "12201 Sunrise Valley Drive"
+contact-city: Reston
+contact-state: VA
+contact-zip: 20192
 
-metadata-person: Jordan S. Read
-metadata-position: Research Civil Engineer
-metadata-phone: 608-821-3921
-metadata-fax: 608-821-3817
-metadata-email: jread@usgs.gov
-metadata-address: "8505 Research Way"
-metadata-city: Middleton
-metadata-state: WI
-metadata-zip: 53562
+metadata-person: Galen A. Gorski
+metadata-position: Machine Learning Specialist
+metadata-phone: 
+metadata-fax: 
+metadata-email: ggorski@usgs.gov
+metadata-address: "12201 Sunrise Valley Drive"
+metadata-city: Reston
+metadata-state: VA
+metadata-zip: 20192
 metadata-date: !expr format(Sys.time(),'%Y%m%d')
 
 accur-test: No formal attribute accuracy tests were conducted.
 funding-credits: >-
-  This study was funded by the [DETAILS HERE]
+  This study was funded by the USGS.
   This research used resources of the Core Science Analytics and Synthesis Advanced Research Computing program at the U.S. Geological Survey.
 
 process-description: >-
   [A description of processing]
 
-distro-person: Jordan S. Read
+distro-person: Galen A. Gorski
 liability-statement: >-
   Unless otherwise stated, all data, metadata and related materials are considered to satisfy the quality standards relative to the purpose for which the data were collected.
   Although these data and associated metadata have been reviewed for accuracy and completeness and approved for release by the U.S. Geological Survey (USGS),
