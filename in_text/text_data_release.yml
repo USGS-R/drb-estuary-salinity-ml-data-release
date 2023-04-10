@@ -1,9 +1,8 @@
 title: >-
-  Data release: [Using deep learning and hydrodynamic modeling to understand and simulate salinity dynamics in the Delaware Bay ]
-
+  Data release: Using deep learning and hydrodynamic modeling to understand and simulate salinity dynamics in the Delaware Bay 
 
 abstract: >-
-  "Salinity dynamics in the Delaware Bay estuary are a critical water quality concern as elevated salinity can damage infrastructure and threaten drinking water supplies. Current state-of-the-art modeling approaches use hydrodynamic models, which can produce accurate results but are limited by significant computational costs. We developed a machine learning (ML) model to predict the 250 mg/L Cl- isochlor, also known as the “salt front”, using daily river discharge, meteorological drivers, and tidal water level data. We use the ML model to predict the location of the salt front, measured in river miles (RM) along the Delaware River, during the period 2001-2020, and we compare the ML model results to results from the hydrodynamic Coupled Ocean Atmospheric Wave Sediment Transport (COAWST) model. The ML model shows RMSE = 2.52 RM during the five-year holdout period, superior to three overlapping years of COAWST model predictions, RMSE = 5.36 RM, however the ML model struggles to predict extreme events. Further, we use functional performance and expected gradients, tools from information theory and explainable artificial intelligence, to show that the ML model learns physically realistic relationships between the salt front location and drivers (particularly discharge and tidal water level). These results demonstrate how an ML modeling approach can provide predictive and functional accuracy at a significantly reduced computational cost compared to process-based models. Additionally, these results provide support for using ML models for applications in operational forecasting, scenario testing, management decision making, hindcasting, and resulting opportunities to understand past behavior and develop hypotheses."
+  Salinity dynamics in the Delaware Bay estuary are a critical water quality concern as elevated salinity can damage infrastructure and threaten drinking water supplies. Current state-of-the-art modeling approaches use hydrodynamic models, which can produce accurate results but are limited by significant computational costs. We developed a machine learning (ML) model to predict the 250 mg/L Cl- isochlor, also known as the “salt front”, using daily river discharge, meteorological drivers, and tidal water level data. We use the ML model to predict the location of the salt front, measured in river miles (RM) along the Delaware River, during the period 2001-2020, and we compare the ML model results to results from the hydrodynamic Coupled Ocean Atmospheric Wave Sediment Transport (COAWST) model. The ML model shows RMSE = 2.52 RM during the five-year holdout period, superior to three overlapping years of COAWST model predictions, RMSE = 5.36 RM, however the ML model struggles to predict extreme events. Further, we use functional performance and expected gradients, tools from information theory and explainable artificial intelligence, to show that the ML model learns physically realistic relationships between the salt front location and drivers (particularly discharge and tidal water level). These results demonstrate how an ML modeling approach can provide predictive and functional accuracy at a significantly reduced computational cost compared to process-based models. Additionally, these results provide support for using ML models for applications in operational forecasting, scenario testing, management decision making, hindcasting, and resulting opportunities to understand past behavior and develop hypotheses.
       
 authors: ["Galen Gorski", "Salme Cook", "Amelia Snyder", "Alison P. Appling", "Theodore Thompson", "Jared D. Smith", "John C. Warner", "Simon N. Topp"]
 pubdate: 2023 # replace with actual year, e.g., 2020
@@ -144,7 +143,7 @@ entities:
       data-min: NA
       data-max: NA
       data-units: NA
- -
+  -
     data-name: 03_model.zip
     data-description: A zip file containing python scripts, workflow files and configuration files for information theory analysis.
     attributes: 
@@ -188,7 +187,7 @@ entities:
       data-min: NA
       data-max: NA
       data-units: NA
- -
+  -
     data-name: 04_analysis.zip
     data-description: A zip file containing python scripts and configuration files for measuring the functional performance of the machine learning model.
     attributes: 
@@ -200,27 +199,27 @@ entities:
       data-min: NA
       data-max: NA
       data-units: NA
- -
+  -
     data-name: README.md
     data-description: A markdown file detailing how to run the included workflow.
     attributes: 
- -
+  -
     data-name: Snakefile_fetch_munge
     data-description: A snakemake workflow used to fetch and process data for machine learning model.
     attributes: 
- -
+  -
     data-name: Snakefile_model_analysis
     data-description: A snakemake workflow used to run information theory analysis.
     attributes:
- -
+  -
     data-name: Snakefile_run_ml_model
     data-description: A snakemake workflow used to run machine learning model.
     attributes:
- -
+  -
     data-name: environment.yaml
     data-description: An environment yaml for creating a conda environment with the necessary libraries.
     attributes:
- -
+  -
     data-name: utils.py
     data-description: A python script with helper functions for retrieving and processing data.
     attributes:
