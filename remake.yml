@@ -29,23 +29,23 @@ targets:
   # - in_data/drb_bnd_polygon.prj
   # - in_data/drb_bnd_polygon.shx
     
-  # sf_spatial_data:
-  #   command: sf::read_spf("in_data/drb_boundary.shp")
-  #   depends:
-  #     - in_data/drb_boundary.dbfscmake
-  #     - in_data/drb_boundary.prj
-  #     - in_data/drb_boundary.shx
+  sf_spatial_data:
+    command: read_sf("in_data/drb_boundary.shp")
+    depends:
+      - in_data/drb_boundary.dbf
+      - in_data/drb_boundary.prj
+      - in_data/drb_boundary.shx
 
-  # grab metadata from spatial file
-  # spatial_metadata:
-  #   command: meddle::extract_feature(sf_spatial_data)
+  #grab metadata from spatial file
+  spatial_metadata:
+    command: extract_feature(sf_spatial_data)
   #   
   # out_data/cars.csv:
   #   command: file.copy(from = "example_data/example_cars.csv", 
   #     to = target_name, overwrite = TRUE)
   
   # out_data/spatial.zip:
-  #   command: sf_to_zip(zip_filename = target_name, 
+  #   command: sf_to_zip(zip_filename = target_name,
   #     sf_object = sf_spatial_data, layer_name = I('spatial_data'))
 
   out_xml/fgdc_metadata.xml:
