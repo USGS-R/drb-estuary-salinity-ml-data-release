@@ -30,11 +30,11 @@ targets:
   # - in_data/drb_bnd_polygon.shx
     
   sf_spatial_data:
-    command: read_sf("in_data/drb_boundary.shp")
+    command: read_sf("in_data/drb_boundary/drb_boundary.shp")
     depends:
-      - in_data/drb_boundary.dbf
-      - in_data/drb_boundary.prj
-      - in_data/drb_boundary.shx
+      - in_data/drb_boundary/drb_boundary.dbf
+      - in_data/drb_boundary/drb_boundary.prj
+      - in_data/drb_boundary/drb_boundary.shx
 
   #grab metadata from spatial file
   spatial_metadata:
