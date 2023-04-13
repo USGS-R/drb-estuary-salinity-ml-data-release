@@ -1,9 +1,9 @@
 title: >-
-  Data release: Using deep learning and hydrodynamic modeling to understand and simulate salinity dynamics in the Delaware Bay 
+  Data release: Using deep learning and hydrodynamic modeling to understand and simulate salinity dynamics in the Delaware Bay
 
 abstract: >-
   Salinity dynamics in the Delaware Bay estuary are a critical water quality concern as elevated salinity can damage infrastructure and threaten drinking water supplies. Current state-of-the-art modeling approaches use hydrodynamic models, which can produce accurate results but are limited by significant computational costs. We developed a machine learning (ML) model to predict the 250 mg/L Cl- isochlor, also known as the “salt front”, using daily river discharge, meteorological drivers, and tidal water level data. We use the ML model to predict the location of the salt front, measured in river miles (RM) along the Delaware River, during the period 2001-2020, and we compare the ML model results to results from the hydrodynamic Coupled Ocean Atmospheric Wave Sediment Transport (COAWST) model. The ML model shows RMSE = 2.52 RM during the five-year holdout period, superior to three overlapping years of COAWST model predictions, RMSE = 5.36 RM, however the ML model struggles to predict extreme events. Further, we use functional performance and expected gradients, tools from information theory and explainable artificial intelligence, to show that the ML model learns physically realistic relationships between the salt front location and drivers (particularly discharge and tidal water level). These results demonstrate how an ML modeling approach can provide predictive and functional accuracy at a significantly reduced computational cost compared to process-based models. Additionally, these results provide support for using ML models for applications in operational forecasting, scenario testing, management decision making, hindcasting, and resulting opportunities to understand past behavior and develop hypotheses.
-      
+
 authors: ["Galen Gorski", "Salme Cook", "Amelia Snyder", "Alison P. Appling", "Theodore Thompson", "Jared D. Smith", "John C. Warner", "Simon N. Topp"]
 pubdate: 2023 # replace with actual year, e.g., 2020
 doi: https://doi.org/YY.XXXXX/XXXXXX # replace with actual DOI
@@ -16,7 +16,7 @@ larger-cites:
   -
     authors: ["Salme E. Cook", "John C. Warner","Kendra L. Russell"]
     title: >-
-      "A numerical investigation of the mechanisms controlling salt intrusion in the Delaware Bay estuary"
+      A numerical investigation of the mechanisms controlling salt intrusion in the Delaware Bay estuary
     form: publication
     pubdate: 2023
     link: https://doi.org/10.1016/j.ecss.2023.108257
@@ -45,7 +45,7 @@ entities:
       attr-def: >-
         A folder to hold a zip file containing meteorological data (which contains its own readme file). 
       attr-defs: >-
-        citation or URL of column_name_1. If citation, should appear in cross-cites. Can use NA or "This release"
+        citation or URL of column_name_1. If citation, should appear in cross-cites. Can use NA or This release
       data-min: NA
       data-max: NA
       data-units: NA
@@ -54,7 +54,7 @@ entities:
       attr-def: >-
         A folder containing python scripts for fetching and processing model data.
       attr-defs: >-
-        citation or URL of column_name_2. If citation, should appear in cross-cites. Can use NA or "This release"
+        citation or URL of column_name_2. If citation, should appear in cross-cites. Can use NA or This release
       data-min: NA
       data-max: NA
       data-units: NA
@@ -63,7 +63,7 @@ entities:
       attr-def: >-
         A configuration file defining read, write and save location of NOAA NERRS meteorological data.
       attr-defs: >-
-        citation or URL of y. If citation, should appear in cross-cites. Can use NA or "This release"
+        citation or URL of y. If citation, should appear in cross-cites. Can use NA or This release
       data-min: NA
       data-max: NA
       data-units: NA
@@ -72,7 +72,7 @@ entities:
       attr-def: >-
         A configuration file defining read, write and save location NOAA NOS tidal data.
       attr-defs: >-
-        citation or URL of z. If citation, should appear in cross-cites. Can use NA or "This release"
+        citation or URL of z. If citation, should appear in cross-cites. Can use NA or This release
       data-min: NA
       data-max: NA
       data-units: NA
@@ -81,7 +81,7 @@ entities:
       attr-def: >-
         A configuration file defining read, write and save location of USGS NWIS discharge data.
       attr-defs: >-
-        citation or URL of z. If citation, should appear in cross-cites. Can use NA or "This release"
+        citation or URL of z. If citation, should appear in cross-cites. Can use NA or This release
       data-min: NA
       data-max: NA
       data-units: NA
@@ -90,7 +90,7 @@ entities:
       attr-def: >-
         A configuration file containing parameters to download NOAA NOS, NOAA NERRS and USGS NWIS data.
       attr-defs: >-
-        citation or URL of z. If citation, should appear in cross-cites. Can use NA or "This release"
+        citation or URL of z. If citation, should appear in cross-cites. Can use NA or This release
       data-min: NA
       data-max: NA
       data-units: NA
@@ -104,7 +104,7 @@ entities:
       attr-def: >-
         A folder containing python scripts to process retrieved data for model.
       attr-defs: >-
-        citation or URL of x. If citation, should appear in cross-cites. Can use NA or "This release"
+        citation or URL of x. If citation, should appear in cross-cites. Can use NA or This release
       data-min: NA
       data-max: NA
       data-units: NA  
@@ -113,7 +113,7 @@ entities:
       attr-def: >-
         A configuration file for specifying which items to pull from ScienceBase to fill discharge at Trenton and Schuykill.
       attr-defs: >-
-        citation or URL of y. If citation, should appear in cross-cites. Can use NA or "This release"
+        citation or URL of y. If citation, should appear in cross-cites. Can use NA or This release
       data-min: NA
       data-max: NA
       data-units: NA
@@ -122,7 +122,7 @@ entities:
       attr-def: >-
         A configuration file for processing NOAA NERRS data.
       attr-defs: >-
-        citation or URL of z. If citation, should appear in cross-cites. Can use NA or "This release"
+        citation or URL of z. If citation, should appear in cross-cites. Can use NA or This release
       data-min: NA
       data-max: NA
       data-units: NA
@@ -131,7 +131,7 @@ entities:
       attr-def: >-
         A configuration file for processing NOAA NOS data.
       attr-defs: >-
-        citation or URL of z. If citation, should appear in cross-cites. Can use NA or "This release"
+        citation or URL of z. If citation, should appear in cross-cites. Can use NA or This release
       data-min: NA
       data-max: NA
       data-units: NA
@@ -140,7 +140,7 @@ entities:
       attr-def: >-
         A configuration file for processing USGS NWIS data.
       attr-defs: >-
-        citation or URL of z. If citation, should appear in cross-cites. Can use NA or "This release"
+        citation or URL of z. If citation, should appear in cross-cites. Can use NA or This release
       data-min: NA
       data-max: NA
       data-units: NA
@@ -154,7 +154,7 @@ entities:
       attr-def: >-
         A folder containing a csv of daily salt front averages, weekly salt front averages and processed COAWST model output.
       attr-defs: >-
-        citation or URL of x. If citation, should appear in cross-cites. Can use NA or "This release"
+        citation or URL of x. If citation, should appear in cross-cites. Can use NA or This release
       data-min: NA
       data-max: NA
       data-units: NA  
@@ -163,7 +163,7 @@ entities:
       attr-def: >-
         A folder containing python scripts to run machine learning model.
       attr-defs: >-
-        citation or URL of y. If citation, should appear in cross-cites. Can use NA or "This release"
+        citation or URL of y. If citation, should appear in cross-cites. Can use NA or This release
       data-min: NA
       data-max: NA
       data-units: NA
@@ -172,7 +172,7 @@ entities:
       attr-def: >-
         A folder containing the machine learning model output.
       attr-defs: >-
-        citation or URL of z. If citation, should appear in cross-cites. Can use NA or "This release"
+        citation or URL of z. If citation, should appear in cross-cites. Can use NA or This release
       data-min: NA
       data-max: NA
       data-units: NA
@@ -181,7 +181,7 @@ entities:
       attr-def: >-
         A configuration file for hyperparameter optimization.
       attr-defs: >-
-        citation or URL of z. If citation, should appear in cross-cites. Can use NA or "This release"
+        citation or URL of z. If citation, should appear in cross-cites. Can use NA or This release
       data-min: NA
       data-max: NA
       data-units: NA
@@ -190,7 +190,7 @@ entities:
       attr-def: >-
         A configuration file for running machine learning model.
       attr-defs: >-
-        citation or URL of z. If citation, should appear in cross-cites. Can use NA or "This release"
+        citation or URL of z. If citation, should appear in cross-cites. Can use NA or This release
       data-min: NA
       data-max: NA
       data-units: NA
@@ -204,7 +204,7 @@ entities:
       attr-def: >-
         A folder containing python scripts to run information theory analysis and other analyses.
       attr-defs: >-
-        citation or URL of y. If citation, should appear in cross-cites. Can use NA or "This release"
+        citation or URL of y. If citation, should appear in cross-cites. Can use NA or This release
       data-min: NA
       data-max: NA
       data-units: NA
@@ -268,7 +268,6 @@ contact-zip: 20192
 metadata-person: Galen A. Gorski
 metadata-position: Machine Learning Specialist
 metadata-phone: 703-648-5246
-metadata-fax: 
 metadata-email: ggorski@usgs.gov
 metadata-address: "12201 Sunrise Valley Drive"
 metadata-city: Reston

@@ -10,4 +10,3 @@ out_data/*.zip
 out_xml/*.xml
 in_data/*
 !in_data/.empty
-!in_data/drb_boundary/*
