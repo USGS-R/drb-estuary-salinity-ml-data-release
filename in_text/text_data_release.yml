@@ -36,208 +36,464 @@ file-format: Four zipped folders and associated files.
 
 entities:
   -
-    data-name: 01_fetch.zip
-    data-description: >-
-      A zipped file containing data and code to retrieve additional data for machine learning model.
-    attributes:
-    -
-      attr-label: in
-      attr-def: >-
-        A folder to hold a zip file containing meteorological data (which contains its own readme file). 
-      attr-defs: >-
-        citation or URL of column_name_1. If citation, should appear in cross-cites. Can use NA or This release
-      data-min: NA
-      data-max: NA
-      data-units: NA
-    -
-      attr-label: src
-      attr-def: >-
-        A folder containing python scripts for fetching and processing model data.
-      attr-defs: >-
-        citation or URL of column_name_2. If citation, should appear in cross-cites. Can use NA or This release
-      data-min: NA
-      data-max: NA
-      data-units: NA
-    -
-      attr-label: params_config_fetch_noaa_nerrs.yaml
-      attr-def: >-
-        A configuration file defining read, write and save location of NOAA NERRS meteorological data.
-      attr-defs: >-
-        citation or URL of y. If citation, should appear in cross-cites. Can use NA or This release
-      data-min: NA
-      data-max: NA
-      data-units: NA
-    -
-      attr-label: params_config_fetch_noaa_nos.yaml
-      attr-def: >-
-        A configuration file defining read, write and save location NOAA NOS tidal data.
-      attr-defs: >-
-        citation or URL of z. If citation, should appear in cross-cites. Can use NA or This release
-      data-min: NA
-      data-max: NA
-      data-units: NA
-    -
-      attr-label: params_config_fetch_usgs_nwis.yaml
-      attr-def: >-
-        A configuration file defining read, write and save location of USGS NWIS discharge data.
-      attr-defs: >-
-        citation or URL of z. If citation, should appear in cross-cites. Can use NA or This release
-      data-min: NA
-      data-max: NA
-      data-units: NA
-    -
-      attr-label: wildcards_fetch_config.yaml
-      attr-def: >-
-        A configuration file containing parameters to download NOAA NOS, NOAA NERRS and USGS NWIS data.
-      attr-defs: >-
-        citation or URL of z. If citation, should appear in cross-cites. Can use NA or This release
-      data-min: NA
-      data-max: NA
-      data-units: NA
-  -
-    data-name: 02_munge.zip
-    data-description: >-
-      A zip file containing python scripts and configuration files to process data for model.
-    attributes: 
-    -
-      attr-label: src
-      attr-def: >-
-        A folder containing python scripts to process retrieved data for model.
-      attr-defs: >-
-        citation or URL of x. If citation, should appear in cross-cites. Can use NA or This release
-      data-min: NA
-      data-max: NA
-      data-units: NA  
-    -
-      attr-label: params_config_fill_discharge_prms.yaml
-      attr-def: >-
-        A configuration file for specifying which items to pull from ScienceBase to fill discharge at Trenton and Schuykill.
-      attr-defs: >-
-        citation or URL of y. If citation, should appear in cross-cites. Can use NA or This release
-      data-min: NA
-      data-max: NA
-      data-units: NA
-    -
-      attr-label: params_config_munge_noaa_nerrs.yaml
-      attr-def: >-
-        A configuration file for processing NOAA NERRS data.
-      attr-defs: >-
-        citation or URL of z. If citation, should appear in cross-cites. Can use NA or This release
-      data-min: NA
-      data-max: NA
-      data-units: NA
-    -
-      attr-label: params_config_munge_noaa_nos.yaml
-      attr-def: >-
-        A configuration file for processing NOAA NOS data.
-      attr-defs: >-
-        citation or URL of z. If citation, should appear in cross-cites. Can use NA or This release
-      data-min: NA
-      data-max: NA
-      data-units: NA
-    -
-      attr-label: params_config_munge_usgs_nwis.yaml
-      attr-def: >-
-        A configuration file for processing USGS NWIS data.
-      attr-defs: >-
-        citation or URL of z. If citation, should appear in cross-cites. Can use NA or This release
-      data-min: NA
-      data-max: NA
-      data-units: NA
-  -
-    data-name: 03_model.zip
-    data-description: >-
-      A zip file containing python scripts, workflow files and configuration files for information theory analysis.
-    attributes: 
-    -
-      attr-label: in
-      attr-def: >-
-        A folder containing a csv of daily salt front averages, weekly salt front averages and processed COAWST model output.
-      attr-defs: >-
-        citation or URL of x. If citation, should appear in cross-cites. Can use NA or This release
-      data-min: NA
-      data-max: NA
-      data-units: NA  
-    -
-      attr-label: src
-      attr-def: >-
-        A folder containing python scripts to run machine learning model.
-      attr-defs: >-
-        citation or URL of y. If citation, should appear in cross-cites. Can use NA or This release
-      data-min: NA
-      data-max: NA
-      data-units: NA
-    -
-      attr-label: out/Run_Manuscript_Results
-      attr-def: >-
-        A folder containing the machine learning model output.
-      attr-defs: >-
-        citation or URL of z. If citation, should appear in cross-cites. Can use NA or This release
-      data-min: NA
-      data-max: NA
-      data-units: NA
-    -
-      attr-label: hyperparameter_config.yaml
-      attr-def: >-
-        A configuration file for hyperparameter optimization.
-      attr-defs: >-
-        citation or URL of z. If citation, should appear in cross-cites. Can use NA or This release
-      data-min: NA
-      data-max: NA
-      data-units: NA
-    -
-      attr-label: model_config.yaml
-      attr-def: >-
-        A configuration file for running machine learning model.
-      attr-defs: >-
-        citation or URL of z. If citation, should appear in cross-cites. Can use NA or This release
-      data-min: NA
-      data-max: NA
-      data-units: NA
-  -
-    data-name: 04_analysis.zip
-    data-description: >-
-      A zip file containing python scripts and configuration files for analyzing model performance including measuring functional performance and calculating expected gradients.
-    attributes: 
-    -
-      attr-label: src
-      attr-def: >-
-        A folder containing python scripts to run information theory analysis and other analyses.
-      attr-defs: >-
-        citation or URL of y. If citation, should appear in cross-cites. Can use NA or This release
-      data-min: NA
-      data-max: NA
-      data-units: NA
-  -
     data-name: README.md
     data-description: >-
       A markdown file detailing how to run the included workflow.
-    attributes: 
-  -
-    data-name: Snakefile_fetch_munge
-    data-description: >-
-      A snakemake workflow used to fetch and process data for machine learning model.
-    attributes: 
-  -
-    data-name: Snakefile_model_analysis
-    data-description: >-
-      A snakemake workflow used to analyze model performance using information theory analysis, expected gradients, and other techniques.
-    attributes:
-  -
-    data-name: Snakefile_run_ml_model
-    data-description: >-
-      A snakemake workflow used to run machine learning model.
-    attributes:
   -
     data-name: environment.yaml
     data-description: >-
       An environment yaml for creating a conda environment with the necessary libraries.
-    attributes:
   -
-    data-name: utils.py
+    data-name: Snakefile_fetch_munge
+    data-description: >-
+      A snakemake workflow used to fetch and process data for machine learning model.
+  -
+    data-name: Snakefile_model_analysis
+    data-description: >-
+      A snakemake workflow used to analyze model performance using information theory analysis, expected gradients, and other techniques.
+  -
+    data-name: Snakefile_run_ml_model
+    data-description: >-
+      A snakemake workflow used to run machine learning model.
+  -
+    data-name: 01_fetch
+    data-description: >-
+      A directory containing data and code to retrieve data for machine learning model.
+  -
+    data-name: 01_fetch/params_config_fetch_noaa_nerrs.yaml
+    data-description: >-
+      A configuration file defining read, write and save location of NOAA NERRS meteorological data.
+  -
+    data-name: 01_fetch/params_config_fetch_noaa_nos.yaml
+    data-description: >-
+      A configuration file defining read, write and save location NOAA NOS tidal data.
+  -
+    data-name: 01_fetch/params_config_fetch_usgs_nwis.yaml
+    data-description: >-
+      A configuration file defining read, write and save location of USGS NWIS discharge data.
+  -
+    data-name: 01_fetch/wildcards_fetch_config.yaml
+    data-description: >-
+      A configuration file containing parameters to download NOAA NOS, NOAA NERRS and USGS NWIS data.
+  -
+    data-name: 01_fetch/in
+    data-description: >-
+      A directory to hold unprocessed input data for machine learning model that had to be manually downloaded.
+  -
+    data-name: 01_fetch/in/953860.zip
+    data-description: >-
+      A zipped directory containing meteorological data and metadata from the NOAA NERRS delsjmet station.
+  -
+    data-name: 01_fetch/src
+    data-description: >-
+      A directory containing python scripts for fetching and processing model data.
+  -
+    data-name: 01_fetch/src/fetch_coawst_model.py
+    data-description: >-
+      XX
+  -
+    data-name: 01_fetch/src/fetch_noaa_nerrs.py
+    data-description: >-
+      XX
+  -
+    data-name: 01_fetch/src/fetch_noaa_nos.py
+    data-description: >-
+      XX
+  -
+    data-name: 01_fetch/src/fetch_usgs_nwis.py
+    data-description: >-
+      XX
+  -
+    data-name: 01_fetch/src/utils.py
     data-description: >-
       A python script with helper functions for retrieving and processing data.
-    attributes:
+  -
+    data-name: 01_fetch/out
+    data-description: >-
+      A directory to hold unprocessed input data for machine learning model. These data may be reformatted versions of data from
+      01_fetch/in or they may be directly data that was downloaded from the source through another mechanism, like an API. This
+      directory is created by running this archive's pipeline (documented in the README.md).
+  -
+    data-name: 02_munge
+    data-description: >-
+      A directory containing python scripts and configuration files to process data for model.
+  -
+    data-name: 02_munge/params_config_fill_discharge_prms.yaml
+    data-description: >-
+      A configuration file for specifying which items to pull from ScienceBase to fill discharge at Trenton and Schuykill.
+  -
+    data-name: 02_munge/params_config_munge_noaa_nerrs.yaml
+    data-description: >-
+      A configuration file for processing NOAA NERRS data.
+  -
+    data-name: 02_munge/params_config_munge_noaa_nos.yaml
+    data-description: >-
+      A configuration file for processing NOAA NOS data.
+  -
+    data-name: 02_munge/params_config_munge_usgs_nwis.yaml
+    data-description: >-
+      A configuration file for processing USGS NWIS data.
+  -
+    data-name: 02_munge/src
+    data-description: >-
+      A directory containing python scripts to process retrieved data for model.
+  -
+    data-name: 02_munge/src/fill_discharge_prms.py
+    data-description: >-
+      XX
+  -
+    data-name: 02_munge/src/munge_noaa_nerrs.py
+    data-description: >-
+      XX
+  -
+    data-name: 02_munge/src/munge_noaa_nos.py
+    data-description: >-
+      XX
+  -
+    data-name: 02_munge/src/munge_usgs_nwis.py
+    data-description: >-
+      XX
+  -
+    data-name: 02_munge/src/salt_front_record.R
+    data-description: >-
+      XX
+  -
+    data-name: 02_munge/out
+    data-description: >-
+      A directory to hold pre-processed input data for machine learning model. This directory is created by running 
+      this archive's pipeline (documented in the README.md).
+  -
+    data-name: 03_model
+    data-description: >-
+      A directory containing python scripts, workflow files and configuration files for information theory analysis.
+  -
+    data-name: 03_model/hyperparameter_config.yaml
+    data-description: >-
+      A configuration file for hyperparameter optimization.
+  -
+    data-name: 03_model/model_config.yaml
+    data-description: >-
+      A configuration file for running machine learning model.
+  -
+    data-name: 03_model/model_config_Run_Manuscript_Results.yaml
+    data-description: >-
+      A snapshot of the configuration file that was used to run the machine learning model that produced the manuscript results.
+      This conifguration file is used in the scripts in 04_analysis to produce the manuscript figures.
+  -
+    data-name: 03_model/in
+    data-description: >-
+      A directory containing a csv of daily salt front averages, weekly salt front averages and processed COAWST model output.
+  -
+    data-name: 03_model/in/saltfront_updated.csv
+    data-description: >-
+      XX
+    attributes: 
+    -
+      attr-label: datetime
+      attr-def: >-
+        XX
+      attr-defs: >-
+        This release
+      data-min: "2000-01-01"
+      data-max: "2021-12-31"
+      data-units: NA
+    -
+      attr-label: saltfront_daily
+      attr-def: >-
+        XX
+      attr-defs: >-
+        This release
+      data-min: 30.73
+      data-max: 90.74
+      data-units: XX
+    -
+      attr-label: saltfront7_weekly
+      attr-def: >-
+        XX
+      attr-defs: >-
+        This release
+      data-min: 30.73
+      data-max: 89.75
+      data-units: XX
+  -
+    data-name: 03_model/in/COAWST_model_runs/processed/COAWST_****_7day.csv
+    data-description: >-
+      XX
+    attributes: 
+    -
+      attr-label: date
+      attr-def: >-
+        XX
+      attr-defs: >-
+        This release
+      data-min: "2016-01-01"
+      data-max: "2020-01-01"
+      data-units: NA
+    -
+      attr-label: coawst_pred
+      attr-def: >-
+        XX
+      attr-defs: >-
+        This release
+      data-min: 47.2485103304761
+      data-max: 86.0767010223214
+      data-units: XX
+  -
+    data-name: 03_model/src
+    data-description: >-
+      A folder containing python scripts to run machine learning model.
+  -
+    data-name: 03_model/src/river_dl/preproc_utils.py
+    data-description: >-
+      XX
+  -
+    data-name: 03_model/src/LSTMDA_torch.py
+    data-description: >-
+      XX
+  -
+    data-name: 03_model/src/run_model.py
+    data-description: >-
+      XX
+  -
+    data-name: 03_model/out
+    data-description: >-
+      A folder containing the machine learning model output. Outputs from each run are stored in directories named after the run_id
+      defined in model_config.yaml.
+  -
+    data-name: 03_model/out/Run_Manuscript_Results
+    data-description: >-
+      A folder containing the machine learning model output that was used in the associated manuscript. There are 10 replicates of
+      the model, each stored in its own directory.
+  -
+    data-name: 03_model/out/Run_Manuscript_Results/inputs.zarr
+    data-description: >-
+      XX
+  -
+    data-name: 03_model/out/Run_Manuscript_Results/target.zarr
+    data-description: >-
+      XX
+  -
+    data-name: 03_model/out/Run_Manuscript_Results/prepped_model_io_data
+    data-description: >-
+      XX
+  -
+    data-name: 03_model/out/Run_Manuscript_Results/**/ModelResults.csv
+    data-description: >-
+      XX
+    attributes: 
+    -
+      attr-label: saltfront_obs
+      attr-def: >-
+        XX
+      attr-defs: >-
+        This release
+      data-min: XX
+      data-max: XX
+      data-units: XX
+    -
+      attr-label: saltfront_pred
+      attr-def: >-
+        XX
+      attr-defs: >-
+        This release
+      data-min: XX
+      data-max: XX
+      data-units: XX
+    -
+      attr-label: train/val
+      attr-def: >-
+        XX
+      attr-defs: >-
+        This release
+      data-min: NA
+      data-max: NA
+      data-units: NA
+  -
+    data-name: 03_model/out/Run_Manuscript_Results/**/ModelResultsTimeSeries.png
+    data-description: >-
+      XX
+  -
+    data-name: 03_model/out/Run_Manuscript_Results/**/losses.png
+    data-description: >-
+      XX
+  -
+    data-name: 03_model/out/Run_Manuscript_Results/**/model_param_output.txt
+    data-description: >-
+      XX
+  -
+    data-name: 03_model/out/Run_Manuscript_Results/**/weights.pt
+    data-description: >-
+      XX
+  -
+    data-name: 04_analysis
+    data-description: >-
+      A directory containing python scripts and configuration files for analyzing model performance including measuring
+      functional performance and calculating expected gradients.
+  -
+    data-name: 04_analysis/src
+    data-description: >-
+      A folder containing python scripts to run information theory analysis and other analyses.
+  -
+    data-name: 04_analysis/src/XAI_functions.py
+    data-description: >-
+      XX
+  -
+    data-name: 04_analysis/src/estuary_salinity_functional_performance_func.py
+    data-description: >-
+      XX
+  -
+    data-name: 04_analysis/src/it_functions.py
+    data-description: >-
+      XX
+  -
+    data-name: 04_analysis/src/results.R
+    data-description: >-
+      XX
+  -
+    data-name: 04_analysis/src/results_functions.R
+    data-description: >-
+      XX
+  -
+    data-name: 04_analysis/out
+    data-description: >-
+      A directory to hold outputs of model performance analysis, including measuring functional performance and calculating 
+      expected gradients. This directory is created by running this archive's pipeline (documented in the README.md).
+  -
+    data-name: 04_analysis/out/Test_run_functional_performance_df.csv
+    data-description: >-
+      XX
+    attributes: 
+    -
+      attr-label: lag
+      attr-def: >-
+        XX
+      attr-defs: >-
+        This release
+      data-min: 0
+      data-max: 9
+      data-units: NA
+    -
+      attr-label: year
+      attr-def: >-
+        XX
+      attr-defs: >-
+        This release
+      data-min: 2001
+      data-max: 2020
+      data-units: NA
+    -
+      attr-label: source
+      attr-def: >-
+        XX
+      attr-defs: >-
+        This release
+      data-min: NA
+      data-max: NA
+      data-units: NA
+    -
+      attr-label: Func_Perf
+      attr-def: >-
+        XX
+      attr-defs: >-
+        This release
+      data-min: -0.227543205
+      data-max: 0.145496753
+      data-units: XX
+    -
+      attr-label: model
+      attr-def: >-
+        XX
+      attr-defs: >-
+        This release
+      data-min: NA
+      data-max: NA
+      data-units: NA
+  -
+    data-name: 04_analysis/out/Test_run_it_df.csv
+    data-description: >-
+      XX
+    attributes: 
+    -
+      attr-label: MI
+      attr-def: >-
+        XX
+      attr-defs: >-
+        This release
+      data-min: 0.111523764
+      data-max: 0.493328032
+      data-units: XX
+    -
+      attr-label: MIcrit
+      attr-def: >-
+        XX
+      attr-defs: >-
+        This release
+      data-min: 0.070052695
+      data-max: 0.246378529
+      data-units: XX
+    -
+      attr-label: TE
+      attr-def: >-
+        XX
+      attr-defs: >-
+        This release
+      data-min: -3.00461E-16
+      data-max: 0.50502906
+      data-units: XX
+    -
+      attr-label: TEcrit
+      attr-def: >-
+        XX
+      attr-defs: >-
+        This release
+      data-min: 0
+      data-max: 0.567124899
+      data-units: XX
+    -
+      attr-label: corr
+      attr-def: >-
+        XX
+      attr-defs: >-
+        This release
+      data-min: -0.903492321
+      data-max: -0.140221919
+      data-units: XX
+    -
+      attr-label: source
+      attr-def: >-
+        XX
+      attr-defs: >-
+        This release
+      data-min: NA
+      data-max: NA
+      data-units: NA
+    -
+      attr-label: sink
+      attr-def: >-
+        XX
+      attr-defs: >-
+        This release
+      data-min: NA
+      data-max: NA
+      data-units: NA
+    -
+      attr-label: year
+      attr-def: >-
+        XX
+      attr-defs: >-
+        This release
+      data-min: 2001
+      data-max: 2020
+      data-units: NA
+    -
+      attr-label: lag
+      attr-def: >-
+        XX
+      attr-defs: >-
+        This release
+      data-min: 0
+      data-max: 9
+      data-units: NA
 
 purpose: This release provides code and data for a running a machine learning model to predict estuary salinity and using information theory, explainable AI, and comparison to other modeling approaches for analysis. 
 start-date: 20000101
