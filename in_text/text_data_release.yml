@@ -249,15 +249,16 @@ themekeywords: ["machine learning", "deep learning", "hybrid modeling", "water",
 usage-rules: >-
   These data are open access usable via creative commons as long as original data providers are acknowledged
   
-descgeog: "Zipped folders containing code and csv files detailing stream temperature predictions in the Delaware River Basin"
 data-publisher: U.S. Geological Survey
 indirect-spatial: U.S.A.
 latitude-res: 0.00001
 longitude-res: 0.00001
 
+
 # ----contacts----
 contact-person: Galen A. Gorski
 contact-phone: 703-648-5246
+contact-fax: 443-498-5510
 contact-email: ggorski@usgs.gov
 contact-position: Machine Learning Specialist
 contact-address: "12201 Sunrise Valley Drive"
@@ -268,6 +269,7 @@ contact-zip: 20192
 metadata-person: Galen A. Gorski
 metadata-position: Machine Learning Specialist
 metadata-phone: 703-648-5246
+metadata-fax: 443-498-5510
 metadata-email: ggorski@usgs.gov
 metadata-address: "12201 Sunrise Valley Drive"
 metadata-city: Reston
