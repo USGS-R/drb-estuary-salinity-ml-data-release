@@ -495,7 +495,7 @@ entities:
       data-max: 9
       data-units: NA
 
-purpose: This release provides code and data for a running a machine learning model to predict estuary salinity and using information theory, explainable AI, and comparison to other modeling approaches for analysis. 
+purpose: This release provides code and data for running a machine learning model to predict estuary salinity and using information theory, explainable AI, and comparison to other modeling approaches for analysis. 
 start-date: 20000101
 end-date: 20191231
 
