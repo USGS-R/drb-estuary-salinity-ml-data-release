@@ -111,7 +111,7 @@ entities:
     data-name: 01_fetch/out
     data-description: >-
       A directory to hold unprocessed input data for machine learning model. These data may be reformatted versions of data from
-      01_fetch/in or they may be directly data that was downloaded from the source through another mechanism, like an API. This
+      01_fetch/in or they may be data that was downloaded directly from the source through another mechanism, like an API. This
       directory is created by running this archive's pipeline (documented in the README.md).
   -
     data-name: 02_munge
