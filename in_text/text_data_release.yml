@@ -90,19 +90,19 @@ entities:
   -
     data-name: 01_fetch/src/fetch_coawst_model.py
     data-description: >-
-      XX
+      A python script containing functions to fetch model output from COAWST.
   -
     data-name: 01_fetch/src/fetch_noaa_nerrs.py
     data-description: >-
-      XX
+      A python script containing functions to fetch data from NOAA's National Estuarine Research Reserve System (NERRS).
   -
     data-name: 01_fetch/src/fetch_noaa_nos.py
     data-description: >-
-      XX
+      A python script containing functions to fetch data from NOAA's National Ocean Servicd (NOS).
   -
     data-name: 01_fetch/src/fetch_usgs_nwis.py
     data-description: >-
-      XX
+      A python script containing functions to fetch water data from USGS's National Water Information system (NWIS).
   -
     data-name: 01_fetch/src/utils.py
     data-description: >-
@@ -140,23 +140,23 @@ entities:
   -
     data-name: 02_munge/src/fill_discharge_prms.py
     data-description: >-
-      XX
+      A python script retrieving prms preditions of discharge from science base data release and fills nan gaps. 
   -
     data-name: 02_munge/src/munge_noaa_nerrs.py
     data-description: >-
-      XX
+      A python script containing functions to process NOAA NERRS data.
   -
     data-name: 02_munge/src/munge_noaa_nos.py
     data-description: >-
-      XX
+      A python script containing functions to process NOAA NOS data.
   -
     data-name: 02_munge/src/munge_usgs_nwis.py
     data-description: >-
-      XX
+      A python script containing functions to process USGS NWIS data.
   -
     data-name: 02_munge/src/salt_front_record.R
     data-description: >-
-      XX
+      A R script containing functions to process daily and weekly salt front calculations from a historic record. 
   -
     data-name: 02_munge/out
     data-description: >-
