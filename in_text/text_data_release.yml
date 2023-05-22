@@ -94,7 +94,7 @@ entities:
   -
     data-name: 01_fetch/src/fetch_noaa_nerrs.py
     data-description: >-
-      A python script containing functions to fetch data from NOAA's National Estuarine Research Reserve System (NERRS).
+      A python script containing functions to fetch data from NOAA's National Estuarine Research Reserve System (NERRS) (source: XX).
   -
     data-name: 01_fetch/src/fetch_noaa_nos.py
     data-description: >-
