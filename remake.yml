@@ -23,20 +23,20 @@ targets:
   # upload this file to your pipeline repostiory, read it in with the read_spatial_file function below, and extract_feature will pull the necessary metadata
   # you do NOT need to upload this file to ScienceBase  with the sf_to_zip function if it was not a planned part of your data release
   # sf_spatial_data:
-  # command: sf::st_read('in_data/drb_bnd_polygon.shp')
+  # command: sf::read_sf('in_data/drb_bnd_polygon.shp')
   # depends:
   # - in_data/drb_bnd_polygon.dbf
   # - in_data/drb_bnd_polygon.prj
   # - in_data/drb_bnd_polygon.shx
     
   sf_spatial_data:
-    command: read_spf("in_data/drb_bounds/drb.shp")
+    command: read_sf("in_data/drb_boundary/drb_boundary.shp")
     depends:
-      - in_data/drb_bounds/drb.dbf
-      - in_data/drb_bounds/drb.prj
-      - in_data/drb_bounds/drb.shx
+      - in_data/drb_boundary/drb_boundary.dbf
+      - in_data/drb_boundary/drb_boundary.prj
+      - in_data/drb_boundary/drb_boundary.shx
 
-  # grab metadata from spatial file
+  #grab metadata from spatial file
   spatial_metadata:
     command: extract_feature(sf_spatial_data)
     
@@ -44,9 +44,9 @@ targets:
     command: file.copy(from = "example_data/example_cars.csv", 
       to = target_name, overwrite = TRUE)
   
-  out_data/spatial.zip:
-    command: sf_to_zip(zip_filename = target_name, 
-      sf_object = sf_spatial_data, layer_name = I('spatial_data'))
+  # out_data/spatial.zip:
+  #   command: sf_to_zip(zip_filename = target_name,
+  #     sf_object = sf_spatial_data, layer_name = I('spatial_data'))
 
   out_xml/fgdc_metadata.xml:
      command: render(filename = target_name,
