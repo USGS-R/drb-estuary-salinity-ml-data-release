@@ -102,7 +102,7 @@ entities:
   -
     data-name: 01_fetch/src/fetch_usgs_nwis.py
     data-description: >-
-      A python script containing functions to fetch water data from USGS's National Water Information system (NWIS).
+      A python script containing functions to fetch water data from USGS's National Water Information system (NWIS) (source: XX).
   -
     data-name: 01_fetch/src/utils.py
     data-description: >-
