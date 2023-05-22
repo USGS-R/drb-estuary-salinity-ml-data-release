@@ -144,7 +144,7 @@ entities:
   -
     data-name: 02_munge/src/munge_noaa_nerrs.py
     data-description: >-
-      A python script containing functions to process NOAA NERRS data.
+      A python script containing functions to process NOAA NERRS data for ingestion into the machine learning model.
   -
     data-name: 02_munge/src/munge_noaa_nos.py
     data-description: >-
