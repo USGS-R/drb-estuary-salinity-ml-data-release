@@ -21,15 +21,57 @@ larger-cites:
     journal: "Estuarine, Coastal and Shelf Science"
     link: https://doi.org/10.1016/j.ecss.2023.108257
 
+  -
+    authors: ["Delaware River Basin Commission"]
+    title: >-
+      Salt Front Calculation Method (documentation and data available upon request).
+    pubdate: 2023
+    link: https://www.nj.gov/drbc/contact/
+    
+  -
+    authors: ["XX"]
+    title: >-
+      NOAA NOS
+    pubdate: XX
+    link: XX
+
+  -
+    authors: ["XX"]
+    title: >-
+      NOAA NERRS
+    pubdate: XX
+    link: XX
+    
+  -
+    authors: ["U.S. Geological Survey"]
+    title: >-
+      National Water Information System
+    pubdate: 2016
+    link: http://waterdata.usgs.gov/nwis/
+ 
+   -
+    authors: ["U.S. Geological Survey"]
+    title: >-
+      COAWST
+    pubdate: XX
+    link: XX
+
+   -
+    authors: ["Jacob Zwart", "Samantha Kay Oliver", "William David Watkins", "Jeffrey Michael Sadler", "Alison Paige Appling", "Hayley Rikert Corson-Dosch", " Xiaowei Jia", "Vipin Kumar", "Jordan S. Read"]
+    title: >-
+      Near-term forecasts of stream temperature using process-guided deep learning and data assimilation.
+    pubdate: 2021
+    link: https://doi.org/10.31223/X55K7G
+
 # ----supporting publications----    
 cross-cites:
   -
-    authors: ["Luke A. Winslow","Gretchen J.A. Hansen","Jordan S. Read","Michael Notaro"]
+    authors: ["Galen Gorski","Salme Cook","Amelia Snyder","Alison P. Appling","Theodore Thompson","Jared D. Smith","John Warner", "Simon N. Topp"]
     title: >-
-      Large-scale modeled contemporary and future water temperature estimates for 10,774 Midwestern U.S. Lakes
-    pubdate: 2017
+      XX - paper title
+    pubdate: 2023
     form: publication
-    link: http://dx.doi.org/10.1038/sdata.2017.53
+    link: XX
 
 process-date: !expr format(Sys.time(),'%Y%m%d')
 file-format: Four zipped folders and associated files.
@@ -96,19 +138,19 @@ entities:
   -
     data-name: 01_fetch/src/fetch_coawst_model.py
     data-description: >-
-      XX
+      A python script containing functions to fetch model output from COAWST (source: XX).
   -
     data-name: 01_fetch/src/fetch_noaa_nerrs.py
     data-description: >-
-      XX
+      A python script containing functions to fetch data from NOAA's National Estuarine Research Reserve System (NERRS) (source: XX).
   -
     data-name: 01_fetch/src/fetch_noaa_nos.py
     data-description: >-
-      XX
+      A python script containing functions to fetch data from NOAA's National Ocean Service (NOS) (source: XX).
   -
     data-name: 01_fetch/src/fetch_usgs_nwis.py
     data-description: >-
-      XX
+      A python script containing functions to fetch water data from USGS's National Water Information system (NWIS) (source: U.S. Geological Survey, 2016).
   -
     data-name: 01_fetch/src/utils.py
     data-description: >-
@@ -146,23 +188,23 @@ entities:
   -
     data-name: 02_munge/src/fill_discharge_prms.py
     data-description: >-
-      XX
+      A python script retrieving PRMS predictions of discharge (source: Zwart and others, 2021) to fill NaNs in observed data. 
   -
     data-name: 02_munge/src/munge_noaa_nerrs.py
     data-description: >-
-      XX
+      A python script containing functions to process NOAA NERRS data for ingestion into the machine learning model.
   -
     data-name: 02_munge/src/munge_noaa_nos.py
     data-description: >-
-      XX
+      A python script containing functions to process NOAA NOS data for ingestion into the machine learning model.
   -
     data-name: 02_munge/src/munge_usgs_nwis.py
     data-description: >-
-      XX
+      A python script containing functions to process USGS NWIS data for ingestion into the machine learning model.
   -
     data-name: 02_munge/src/salt_front_record.R
     data-description: >-
-      XX
+      An R script that preprocesses daily and 7-day backward-looking average values of salt front location (source: Delaware River Basin Commission, 2023). Preprocessing includes renaming columns and subsetting time series to only include values in or after the year 2000. 
   -
     data-name: 02_munge/out
     data-description: >-
