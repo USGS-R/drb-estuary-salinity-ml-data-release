@@ -148,7 +148,7 @@ entities:
   -
     data-name: 02_munge/src/munge_noaa_nos.py
     data-description: >-
-      A python script containing functions to process NOAA NOS data.
+      A python script containing functions to process NOAA NOS data for ingestion into the machine learning model.
   -
     data-name: 02_munge/src/munge_usgs_nwis.py
     data-description: >-
