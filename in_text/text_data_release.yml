@@ -45,9 +45,9 @@ larger-cites:
   -
     authors: ["U.S. Geological Survey"]
     title: >-
-      NWIS
-    pubdate: XX
-    link: XX
+      National Water Information System
+    pubdate: 2016
+    link: http://waterdata.usgs.gov/nwis/
  
    -
     authors: ["U.S. Geological Survey"]
@@ -144,7 +144,7 @@ entities:
   -
     data-name: 01_fetch/src/fetch_usgs_nwis.py
     data-description: >-
-      A python script containing functions to fetch water data from USGS's National Water Information system (NWIS) (source: XX).
+      A python script containing functions to fetch water data from USGS's National Water Information system (NWIS) (source: U.S. Geological Survey, 2016).
   -
     data-name: 01_fetch/src/utils.py
     data-description: >-
