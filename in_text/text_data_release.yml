@@ -98,7 +98,7 @@ entities:
   -
     data-name: 01_fetch/src/fetch_noaa_nos.py
     data-description: >-
-      A python script containing functions to fetch data from NOAA's National Ocean Servicd (NOS).
+      A python script containing functions to fetch data from NOAA's National Ocean Service (NOS) (source: XX).
   -
     data-name: 01_fetch/src/fetch_usgs_nwis.py
     data-description: >-
