@@ -156,7 +156,7 @@ entities:
   -
     data-name: 02_munge/src/salt_front_record.R
     data-description: >-
-      A R script containing functions to process daily and weekly salt front calculations from a historic record. 
+      An R script that preprocesses daily and 7-day backward-looking average values of salt front location (source: Delaware River Basin Commission, 2023). Preprocessing includes renaming columns and subsetting time series to only include values in or after the year 2000. 
   -
     data-name: 02_munge/out
     data-description: >-
