@@ -21,6 +21,13 @@ larger-cites:
     pubdate: 2023
     link: https://doi.org/10.1016/j.ecss.2023.108257
 
+  -
+    authors: ["Delaware River Basin Commission"]
+    title: >-
+      Salt Front Calculation Method (documentation and data available upon request).
+    pubdate: 2023
+    link: https://www.nj.gov/drbc/contact/
+
 # ----supporting publications----    
 cross-cites:
   -
