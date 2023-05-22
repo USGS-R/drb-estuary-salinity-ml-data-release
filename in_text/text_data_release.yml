@@ -27,6 +27,41 @@ larger-cites:
       Salt Front Calculation Method (documentation and data available upon request).
     pubdate: 2023
     link: https://www.nj.gov/drbc/contact/
+    
+  -
+    authors: ["XX"]
+    title: >-
+      NOAA NOS
+    pubdate: XX
+    link: XX
+
+  -
+    authors: ["XX"]
+    title: >-
+      NOAA NERRS
+    pubdate: XX
+    link: XX
+    
+  -
+    authors: ["U.S. Geological Survey"]
+    title: >-
+      NWIS
+    pubdate: XX
+    link: XX
+ 
+   -
+    authors: ["U.S. Geological Survey"]
+    title: >-
+      COAWST
+    pubdate: XX
+    link: XX
+
+   -
+    authors: ["Jacob Zwart", "Samantha Kay Oliver", "William David Watkins", "Jeffrey Michael Sadler", "Alison Paige Appling", "Hayley Rikert Corson-Dosch", " Xiaowei Jia", "Vipin Kumar", "Jordan S. Read"]
+    title: >-
+      Near-term forecasts of stream temperature using process-guided deep learning and data assimilation.
+    pubdate: 2021
+    link: https://doi.org/10.31223/X55K7G
 
 # ----supporting publications----    
 cross-cites:
@@ -147,7 +182,7 @@ entities:
   -
     data-name: 02_munge/src/fill_discharge_prms.py
     data-description: >-
-      A python script retrieving PRMS predictions of discharge (source: https://doi.org/10.31223/X55K7G) to fill NaNs in observed data. 
+      A python script retrieving PRMS predictions of discharge (source: Zwart and others, 2021) to fill NaNs in observed data. 
   -
     data-name: 02_munge/src/munge_noaa_nerrs.py
     data-description: >-
