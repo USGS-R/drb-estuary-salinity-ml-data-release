@@ -353,8 +353,8 @@ entities:
         indicator if the days prediction falls into the training or validation time period
       attr-defs: >-
         This release
-      data-min: Training
-      data-max: Validation
+      data-min: NA
+      data-max: NA
       data-units: None
   -
     data-name: 03_model/out/Run_Manuscript_Results/**/ModelResultsTimeSeries.png
