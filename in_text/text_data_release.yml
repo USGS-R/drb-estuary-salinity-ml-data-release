@@ -327,7 +327,7 @@ entities:
   -
     data-name: 03_model/out/Run_Manuscript_Results/**/ModelResults.csv
     data-description: >-
-      daily prediction of 7-day average salt front location for each model replicate
+      Daily prediction of 7-day backward-looking average salt front location for each model replicate.
     attributes: 
     -
       attr-label: saltfront_obs
