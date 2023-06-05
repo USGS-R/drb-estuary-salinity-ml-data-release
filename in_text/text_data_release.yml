@@ -325,7 +325,7 @@ entities:
     data-description: >-
       inputs and targets merged and prepared for model training
   -
-    data-name: 03_model/out/Run_Manuscript_Results/**/ModelResults.csv
+    data-name: 03_model/out/Run_Manuscript_Results/{replicate}/ModelResults.csv
     data-description: >-
       Daily prediction of 7-day backward-looking average salt front location for each model replicate.
     attributes: 
