@@ -77,12 +77,6 @@ file-format: Four zipped folders and associated files.
 
 entities:
   -
-    data-name: 01_fetch.zip
-    data-description: A zipped file containing data and code to retrieve additional data for machine learning model.
-    attributes:
-    -
-      attr-label: in
-      attr-def: A folder to hold a zip file containing meteorological data (which contains its own readme file). 
     data-name: README.md
     data-description: >-
       A markdown file detailing how to run the included workflow.
