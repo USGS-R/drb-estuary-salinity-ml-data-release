@@ -257,14 +257,14 @@ entities:
       data-max: 89.75
       data-units: river miles
   -
-    data-name: 03_model/in/COAWST_model_runs/processed/COAWST_****_7day.csv
+    data-name: 03_model/in/COAWST_model_runs/processed/COAWST_{year}_7day.csv
     data-description: >-
       Prediction of salt front location from COAWST model for three years 2016, 2018, and 2019 each in a separate .csv file
     attributes: 
     -
       attr-label: date
       attr-def: >-
-        date
+        Date of predicted value
       attr-defs: >-
         This release
       data-min: "2016-01-01"
@@ -290,11 +290,11 @@ entities:
   -
     data-name: 03_model/src/LSTMDA_torch.py
     data-description: >-
-      a python script containing functions for the training and evaluation of the LSTM
+      A python script containing functions for the training and evaluation of the LSTM machine learning model
   -
     data-name: 03_model/src/run_model.py
     data-description: >-
-      a python script with functions for processing data, training the model, and processing the results
+      A python script with functions for processing data, training the model, and processing the results.
   -
     data-name: 03_model/out
     data-description: >-
