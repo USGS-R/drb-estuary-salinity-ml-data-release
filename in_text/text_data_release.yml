@@ -28,18 +28,18 @@ larger-cites:
     link: https://www.nj.gov/drbc/contact/
     
   -
-    authors: ["XX"]
+    authors: ["NOAA National Ocean Services"]
     title: >-
-      NOAA NOS
-    pubdate: XX
-    link: XX
+      NOAA Tides and Currents
+    pubdate: 2021
+    link: https://tidesandcurrents.noaa.gov/
 
   -
-    authors: ["XX"]
+    authors: ["NOAA National Estuarine Research Reserve System (NERRS)"]
     title: >-
       NOAA NERRS
-    pubdate: XX
-    link: XX
+    pubdate: 2021
+    link: http://www.nerrsdata.org
     
   -
     authors: ["U.S. Geological Survey"]
@@ -241,12 +241,12 @@ entities:
     -
       attr-label: saltfront_daily
       attr-def: >-
-        Daily record of the salt front location
+        Daily record of the salt front location upstream of the mouth of the estuary 
       attr-defs: >-
         This release
       data-min: 30.73
       data-max: 90.74
-      data-units: river miles
+      data-units: river miles upstream of the mouth of the estuary
     -
       attr-label: saltfront7_weekly
       attr-def: >-
@@ -255,7 +255,7 @@ entities:
         This release
       data-min: 30.73
       data-max: 89.75
-      data-units: river miles
+      data-units: river miles upstream of the mouth of the estuary
   -
     data-name: 03_model/in/COAWST_model_runs/processed/COAWST_{year}_7day.csv
     data-description: >-
@@ -273,12 +273,12 @@ entities:
     -
       attr-label: coawst_pred
       attr-def: >-
-        7-day average salt front location predictions from COAWST 
+        7-day backward looking average salt front location predictions from COAWST 
       attr-defs: >-
         This release
       data-min: 47.2485103304761
       data-max: 86.0767010223214
-      data-units: date MM-DD-YYYY
+      data-units: river miles upstream of the mouth of the estuary
   -
     data-name: 03_model/src
     data-description: >-
@@ -286,7 +286,7 @@ entities:
   -
     data-name: 03_model/src/river_dl/preproc_utils.py
     data-description: >-
-      a python script containing functions for preprocessing data for modeling from the river-dl submodule
+      a python script containing functions for preprocessing input data for modeling, preprocessing includes normalization, making train/val/test splits, and converting data to pytorch tensors 
   -
     data-name: 03_model/src/LSTMDA_torch.py
     data-description: >-
@@ -308,7 +308,7 @@ entities:
   -
     data-name: 03_model/out/Run_Manuscript_Results/inputs.zarr
     data-description: >-
-      time series of inputs for the model
+      time series of inputs for the model, includes gapfilled NWIS (discharge), NOAA NOS (tidal), NOAA NERS (meteorological) data
   -
     data-name: 03_model/out/Run_Manuscript_Results/target.zarr
     data-description: >-
@@ -325,46 +325,46 @@ entities:
     -
       attr-label: saltfront_obs
       attr-def: >-
-        observed daily 7-day average location of the salt front 
+        Observed daily 7-day backward-looking averagesalt front location (source: Delaware River Basin Commission, 2023). 
       attr-defs: >-
         This release
       data-min: 54.08
       data-max: 89.75
-      data-units: river mile
+      data-units: river miles upstream of the mouth of the estuary
     -
       attr-label: saltfront_pred
       attr-def: >-
-        daily prediction of 7-day average salt front location for model replicate **
+         Daily prediction of 7-day backward-looking average salt front location for the model replicate.
       attr-defs: >-
         This release
       data-min: 56.50
       data-max: 88.15
-      data-units: river mile
+      data-units: river miles upstream of the mouth of the estuary
     -
       attr-label: train/val
       attr-def: >-
-        indicator if the days prediction falls into the training or validation time period
+        Indicator if the days prediction falls into the training or validation time period.
       attr-defs: >-
         This release
       data-min: NA
       data-max: NA
-      data-units: None
+      data-units: NA
   -
-    data-name: 03_model/out/Run_Manuscript_Results/**/ModelResultsTimeSeries.png
+    data-name: 03_model/out/Run_Manuscript_Results/{replicate}/ModelResultsTimeSeries.png
     data-description: >-
-      a plot of the time series of observed and predicted salt front location for each model replicate
+      A plot of the time series of observed (source: Delaware River Basin Commission, 2023) and predicted salt front location for each replicate of the model run (run_id='Run_Manuscript_Results') published in the associated manuscript (Gorski and others, 2023)
   -
-    data-name: 03_model/out/Run_Manuscript_Results/**/losses.png
+    data-name: 03_model/out/Run_Manuscript_Results/{replicate}/losses.png
     data-description: >-
-      a plot of the validation losses for each epoch during the model training
+       A plot of the training validation losses for each epoch of the indicated replicate of the model run (run_id='Run_Manuscript_Results') published in the associated manuscript (Gorski and others, 2023)g
   -
-    data-name: 03_model/out/Run_Manuscript_Results/**/model_param_output.txt
+    data-name: 03_model/out/Run_Manuscript_Results/{replicate}/model_param_output.txt
     data-description: >-
-      a parameter file that shows the model hyperparameters and other modeling parameters used for model training
+      A parameter file that shows the model hyperparameters and other modeling parameters used during the training of each replicate of the model run (run_id='Run_Manuscript_Results') published in the associated manuscript (Gorski and others, 2023).
   -
-    data-name: 03_model/out/Run_Manuscript_Results/**/weights.pt
+    data-name: 03_model/out/Run_Manuscript_Results/{replicate}/weights.pt
     data-description: >-
-      the trained weights of the model for each replicate
+      The trained weights for each replicate of the model run (run_id='Run_Manuscript_Results') published in the associated manuscript (Gorski and others, 2023).
   -
     data-name: 04_analysis
     data-description: >-
@@ -377,23 +377,23 @@ entities:
   -
     data-name: 04_analysis/src/XAI_functions.py
     data-description: >-
-      a python script with functions for applying XAI techniques to the model
+      A python script with functions for applying XAI techniques to the model.
   -
     data-name: 04_analysis/src/estuary_salinity_functional_performance_func.py
     data-description: >-
-      a python script that executes the functional performance calculations for the model output and COAWST model output
+      A python script that executes the functional performance calculations for the model output and COAWST model output.
   -
     data-name: 04_analysis/src/it_functions.py
     data-description: >-
-      a python script with functions to calculate information theory based metrics such as mutual information and transfer entropy
+      A python script with functions to calculate information theory based metrics such as mutual information and transfer entropy.
   -
     data-name: 04_analysis/src/results.R
     data-description: >-
-      an R script for generating the figures from the manuscript
+      An R script for generating the figures from the manuscript.
   -
     data-name: 04_analysis/src/results_functions.R
     data-description: >-
-      an R script with functions to use in results.R for generating the figures from the manuscript
+      An R script with functions to use in results.R for generating the figures from the manuscript.
   -
     data-name: 04_analysis/out
     data-description: >-
@@ -402,12 +402,12 @@ entities:
   -
     data-name: 04_analysis/out/Test_run_functional_performance_df.csv
     data-description: >-
-      a csv with functional performance calculations for each source/sink/year combination by subtracting the modeled transfer entropy from the observed
+      A csv with functional performance calculations for each source/sink/year combination by subtracting the transfer entropy of the modeled salt front location from the transfer entropy of the observed salt front location.
     attributes: 
     -
       attr-label: lag
       attr-def: >-
-        the number of timestamps (days) to lag the sink from the source for the calculation
+        The number of timestamps (days) to lag the sink from the source for the transfer entropy calculation.
       attr-defs: >-
         This release
       data-min: 0
@@ -416,7 +416,7 @@ entities:
     -
       attr-label: year
       attr-def: >-
-        the year to run the calculations for
+        The year to run the transfer entropy calculations for.
       attr-defs: >-
         This release
       data-min: 2001
@@ -425,7 +425,7 @@ entities:
     -
       attr-label: source
       attr-def: >-
-        list of column names to use as sources
+        List of column names to use as sources.
       attr-defs: >-
         This release
       data-min: NA
@@ -434,16 +434,16 @@ entities:
     -
       attr-label: Func_Perf
       attr-def: >-
-        the calculated fucntional performance
+        The calculated fucntional performance.
       attr-defs: >-
         This release
       data-min: -0.227543205
       data-max: 0.145496753
-      data-units: unitless since transfer entropy is of nats then normalized by the entropy of the sink variable
+      data-units: NA
     -
       attr-label: model
       attr-def: >-
-        the name of the model that is being assesseed
+        The name of the model that is being assessed.
       attr-defs: >-
         This release
       data-min: NA
@@ -452,21 +452,21 @@ entities:
   -
     data-name: 04_analysis/out/Test_run_it_df.csv
     data-description: >-
-      a csv with the results from 
+      A csv produced by the calc_it_metrics_for_pairs function in estuary_salinity_functional_performance_func.py script
     attributes: 
     -
       attr-label: MI
       attr-def: >-
-        mutual information between source and sink
+        Mutual information between source and sink.
       attr-defs: >-
         This release
       data-min: 0.111523764
       data-max: 0.493328032
-      data-units: unitless since mutual information is of nats then normalized by the entropy of the sink variable
+      data-units: NA
     -
       attr-label: MIcrit
       attr-def: >-
-        The significance threshold for mutual information
+        The significance threshold for mutual information set by the user default 0.05
       attr-defs: >-
         This release
       data-min: 0.070052695
@@ -484,12 +484,12 @@ entities:
     -
       attr-label: TEcrit
       attr-def: >-
-        the significance threshold for transfer entropy
+        The significance threshold for transfer entropy set by the user default 0.05
       attr-defs: >-
         This release
       data-min: 0
       data-max: 0.567124899
-      data-units: unitless since transfer entropy is of nats then normalized by the entropy of the sink variable
+      data-units: NA
     -
       attr-label: corr
       attr-def: >-
@@ -498,11 +498,11 @@ entities:
         This release
       data-min: -0.903492321
       data-max: -0.140221919
-      data-units: unitless
+      data-units: NA
     -
       attr-label: source
       attr-def: >-
-        source variable (X) used for information theory calculations
+        Source variable (X) used for information theory calculations.
       attr-defs: >-
         This release
       data-min: NA
@@ -511,7 +511,7 @@ entities:
     -
       attr-label: sink
       attr-def: >-
-        sink variable (Y) used for information theory calculations
+        Sink variable (Y) used for information theory calculations.
       attr-defs: >-
         This release
       data-min: NA
@@ -520,7 +520,7 @@ entities:
     -
       attr-label: year
       attr-def: >-
-        year used for information theory calculations
+        Year used for information theory calculations.
       attr-defs: >-
         This release
       data-min: 2001
@@ -529,7 +529,7 @@ entities:
     -
       attr-label: lag
       attr-def: >-
-        time lag for information theory calculations
+        Time lag for information theory calculations.
       attr-defs: >-
         This release
       data-min: 0
