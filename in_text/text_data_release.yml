@@ -475,12 +475,12 @@ entities:
     -
       attr-label: TE
       attr-def: >-
-        transfer entropy between source and sink
+        Transfer entropy between source and sink.
       attr-defs: >-
         This release
       data-min: -3.00461E-16
       data-max: 0.50502906
-      data-units: unitless since transfer entropy is of nats then normalized by the entropy of the sink variable
+      data-units: NA
     -
       attr-label: TEcrit
       attr-def: >-
@@ -493,7 +493,7 @@ entities:
     -
       attr-label: corr
       attr-def: >-
-        pearson correlation coefficient between source and sink
+        Pearson correlation coefficient between source and sink.
       attr-defs: >-
         This release
       data-min: -0.903492321
