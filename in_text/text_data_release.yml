@@ -232,7 +232,7 @@ entities:
     -
       attr-label: datetime
       attr-def: >-
-        date
+        Date of salt front location measurement in the format 'YYYY-MM-DD'
       attr-defs: >-
         This release
       data-min: "2000-01-01"
