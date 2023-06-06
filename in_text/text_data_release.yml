@@ -227,7 +227,7 @@ entities:
   -
     data-name: 03_model/in/saltfront_updated.csv
     data-description: >-
-      a record of the salt front location in units of river mile, provided by the Delaware River Basin Commission
+      A record of the salt front location in units of river mile (source: Delaware River Basin Commission, 2023)
     attributes: 
     -
       attr-label: datetime
