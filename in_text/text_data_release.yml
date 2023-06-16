@@ -316,7 +316,7 @@ entities:
   -
     data-name: 03_model/out/Run_Manuscript_Results/prepped_model_io_data
     data-description: >-
-      inputs and targets merged and prepared for model training
+      Input and target data that has been prepared for model training by being normalized, split into training and testing sets, and merged.
   -
     data-name: 03_model/out/Run_Manuscript_Results/{replicate}/ModelResults.csv
     data-description: >-
