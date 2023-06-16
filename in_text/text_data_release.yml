@@ -47,33 +47,34 @@ larger-cites:
     pubdate: 2016
     link: http://waterdata.usgs.gov/nwis/
  
-   -
-    authors: ["Salme E. Cook", John C. Warner"]
+  -
+    authors: ["Salme E. Cook", "John C. Warner"]
     title: >-
       U.S. Geological Survey simulations of 3D-hydrodynamics in Delaware Bay (2019) to improve understanding of the mechanisms driving salinity intrusion.
     pubdate: 2023
     link: https://doi.org/10.5066/P9GU07FL
 
-   -
-    authors: ["Salme E. Cook", John C. Warner"]
+  -
+    authors: ["Salme E. Cook", "John C. Warner"]
     title: >-
       U.S. Geological Survey simulations of 3D-hydrodynamics in Delaware Bay (2016, 2018, 2021) to improve understanding of the mechanisms driving salinity intrusion.
     pubdate: 2023
     link: https://doi.org/10.5066/P9ANH82L
 
-   -
+  -
     authors: ["Jacob Zwart", "Samantha Kay Oliver", "William David Watkins", "Jeffrey Michael Sadler", "Alison Paige Appling", "Hayley Rikert Corson-Dosch", " Xiaowei Jia", "Vipin Kumar", "Jordan S. Read"]
     title: >-
       Near-term forecasts of stream temperature using process-guided deep learning and data assimilation.
     pubdate: 2021
     link: https://doi.org/10.31223/X55K7G
 
-# ----supporting publications----    
+# ----supporting publications----
+#XX - update paper title, link once accepted
 cross-cites:
   -
     authors: ["Galen Gorski","Salme Cook","Amelia Snyder","Alison P. Appling","Theodore Thompson","Jared D. Smith","John Warner", "Simon N. Topp"]
     title: >-
-      XX - paper title
+      Using deep learning and hydrodynamic modeling to understand and simulate salinity dynamics in the Delaware Bay
     pubdate: 2023
     form: publication
     link: XX
@@ -109,15 +110,15 @@ entities:
   -
     data-name: 01_fetch/params_config_fetch_noaa_nerrs.yaml
     data-description: >-
-      A configuration file defining read, write and save location of NOAA NERRS meteorological data.
+      A configuration file defining read, write and save location of NOAA NERRS meteorological data (source: National Oceanic and Atmospheric Administration, 2001).
   -
     data-name: 01_fetch/params_config_fetch_noaa_nos.yaml
     data-description: >-
-      A configuration file defining read, write and save location NOAA NOS tidal data.
+      A configuration file defining read, write and save location NOAA's National Ocean Service (NOS) tidal data (source: National Oceanic and Atmospheric Administration, Tides and Currents Data).
   -
     data-name: 01_fetch/params_config_fetch_usgs_nwis.yaml
     data-description: >-
-      A configuration file defining read, write and save location of USGS NWIS discharge data.
+      A configuration file defining read, write and save location of USGS'a National Water Information system (NWIS) discharge data (source: U.S. Geological Survey, 2016).
   -
     data-name: 01_fetch/wildcards_fetch_config.yaml
     data-description: >-
@@ -141,15 +142,15 @@ entities:
   -
     data-name: 01_fetch/src/fetch_noaa_nerrs.py
     data-description: >-
-      A python script containing functions to fetch data from NOAA's National Estuarine Research Reserve System (NERRS) (source: National Oceanic and Atmospheric Administration, 2001).
+      A python script containing functions to fetch data from NOAA NERRS.
   -
     data-name: 01_fetch/src/fetch_noaa_nos.py
     data-description: >-
-      A python script containing functions to fetch data from NOAA's National Ocean Service (NOS) (source: National Oceanic and Atmospheric Administration, Tides and Currents Data).
+      A python script containing functions to fetch data from NOAA NOS.
   -
     data-name: 01_fetch/src/fetch_usgs_nwis.py
     data-description: >-
-      A python script containing functions to fetch water data from USGS's National Water Information system (NWIS) (source: U.S. Geological Survey, 2016).
+      A python script containing functions to fetch water data from USGS NWIS.
   -
     data-name: 01_fetch/src/utils.py
     data-description: >-
@@ -477,7 +478,7 @@ entities:
         This release
       data-min: 0.070052695
       data-max: 0.246378529
-      data-units: XX
+      data-units: NA
     -
       attr-label: TE
       attr-def: >-
