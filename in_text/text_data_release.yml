@@ -312,7 +312,7 @@ entities:
   -
     data-name: 03_model/out/Run_Manuscript_Results/target.zarr
     data-description: >-
-      time series of the modeling target (salt front location)
+      Time series of the modeling target (salt front location).
   -
     data-name: 03_model/out/Run_Manuscript_Results/prepped_model_io_data
     data-description: >-
