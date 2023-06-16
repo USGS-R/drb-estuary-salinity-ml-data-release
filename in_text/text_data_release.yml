@@ -308,7 +308,7 @@ entities:
   -
     data-name: 03_model/out/Run_Manuscript_Results/inputs.zarr
     data-description: >-
-      time series of inputs for the model, includes gapfilled NWIS (discharge), NOAA NOS (tidal), NOAA NERS (meteorological) data
+      Time series of inputs for the model, includes gap-filled NWIS (discharge), NOAA NOS (tidal), and NOAA NERRS (meteorological) data.
   -
     data-name: 03_model/out/Run_Manuscript_Results/target.zarr
     data-description: >-
