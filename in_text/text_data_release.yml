@@ -16,8 +16,7 @@ larger-cites:
   -
     authors: ["Salme E. Cook", "John C. Warner","Kendra L. Russell"]
     title: >-
-      A numerical investigation of the mechanisms controlling salt intrusion in the Delaware Bay estuary
-    form: publication
+      "A numerical investigation of the mechanisms controlling salt intrusion in the Delaware Bay estuary"
     pubdate: 2023
     link: https://doi.org/10.1016/j.ecss.2023.108257
 
@@ -234,12 +233,12 @@ entities:
   -
     data-name: 03_model/in/saltfront_updated.csv
     data-description: >-
-      XX
+      A record of the salt front location in units of river mile (source: Delaware River Basin Commission, 2023)
     attributes: 
     -
       attr-label: datetime
       attr-def: >-
-        XX
+        Date of salt front location measurement in the format 'YYYY-MM-DD'
       attr-defs: >-
         This release
       data-min: "2000-01-01"
@@ -248,44 +247,44 @@ entities:
     -
       attr-label: saltfront_daily
       attr-def: >-
-        XX
+        Daily record of the salt front location upstream of the mouth of the estuary 
       attr-defs: >-
         This release
       data-min: 30.73
       data-max: 90.74
-      data-units: XX
+      data-units: river miles upstream of the mouth of the estuary
     -
       attr-label: saltfront7_weekly
       attr-def: >-
-        XX
+        7-day backward looking average of the salt front location
       attr-defs: >-
         This release
       data-min: 30.73
       data-max: 89.75
-      data-units: XX
+      data-units: river miles upstream of the mouth of the estuary
   -
-    data-name: 03_model/in/COAWST_model_runs/processed/COAWST_****_7day.csv
+    data-name: 03_model/in/COAWST_model_runs/processed/COAWST_{year}_7day.csv
     data-description: >-
-      XX
+      Prediction of salt front location from COAWST model for three years 2016, 2018, and 2019 each in a separate .csv file
     attributes: 
     -
       attr-label: date
       attr-def: >-
-        XX
+        Date of predicted value
       attr-defs: >-
         This release
       data-min: "2016-01-01"
       data-max: "2020-01-01"
-      data-units: NA
+      data-units: 
     -
       attr-label: coawst_pred
       attr-def: >-
-        XX
+        7-day backward looking average salt front location predictions from COAWST 
       attr-defs: >-
         This release
       data-min: 47.2485103304761
       data-max: 86.0767010223214
-      data-units: XX
+      data-units: river miles upstream of the mouth of the estuary
   -
     data-name: 03_model/src
     data-description: >-
@@ -293,15 +292,15 @@ entities:
   -
     data-name: 03_model/src/river_dl/preproc_utils.py
     data-description: >-
-      XX
+      a python script containing functions for preprocessing input data for modeling, preprocessing includes normalization, making train/val/test splits, and converting data to pytorch tensors 
   -
     data-name: 03_model/src/LSTMDA_torch.py
     data-description: >-
-      XX
+      A python script containing functions for the training and evaluation of the LSTM machine learning model
   -
     data-name: 03_model/src/run_model.py
     data-description: >-
-      XX
+      A python script with functions for processing data, training the model, and processing the results.
   -
     data-name: 03_model/out
     data-description: >-
@@ -315,63 +314,63 @@ entities:
   -
     data-name: 03_model/out/Run_Manuscript_Results/inputs.zarr
     data-description: >-
-      XX
+      Time series of inputs for the model, includes gap-filled NWIS (discharge), NOAA NOS (tidal), and NOAA NERRS (meteorological) data.
   -
     data-name: 03_model/out/Run_Manuscript_Results/target.zarr
     data-description: >-
-      XX
+      Time series of the modeling target (salt front location).
   -
     data-name: 03_model/out/Run_Manuscript_Results/prepped_model_io_data
     data-description: >-
-      XX
+      Input and target data that has been prepared for model training by being normalized, split into training and testing sets, and merged.
   -
-    data-name: 03_model/out/Run_Manuscript_Results/**/ModelResults.csv
+    data-name: 03_model/out/Run_Manuscript_Results/{replicate}/ModelResults.csv
     data-description: >-
-      XX
+      Daily prediction of 7-day backward-looking average salt front location for each replicate of the model run (run_id='Run_Manuscript_Results') published in the associated manuscript (Gorski and others, 2023).
     attributes: 
     -
       attr-label: saltfront_obs
       attr-def: >-
-        XX
+        Observed daily 7-day backward-looking averagesalt front location (source: Delaware River Basin Commission, 2023). 
       attr-defs: >-
         This release
-      data-min: XX
-      data-max: XX
-      data-units: XX
+      data-min: 54.08
+      data-max: 89.75
+      data-units: river miles upstream of the mouth of the estuary
     -
       attr-label: saltfront_pred
       attr-def: >-
-        XX
+         Daily prediction of 7-day backward-looking average salt front location for the model replicate.
       attr-defs: >-
         This release
-      data-min: XX
-      data-max: XX
-      data-units: XX
+      data-min: 56.50
+      data-max: 88.15
+      data-units: river miles upstream of the mouth of the estuary
     -
       attr-label: train/val
       attr-def: >-
-        XX
+        Indicator if the days prediction falls into the training or validation time period.
       attr-defs: >-
         This release
       data-min: NA
       data-max: NA
       data-units: NA
   -
-    data-name: 03_model/out/Run_Manuscript_Results/**/ModelResultsTimeSeries.png
+    data-name: 03_model/out/Run_Manuscript_Results/{replicate}/ModelResultsTimeSeries.png
     data-description: >-
-      XX
+      A plot of the time series of observed (source: Delaware River Basin Commission, 2023) and predicted salt front location for each replicate of the model run (run_id='Run_Manuscript_Results') published in the associated manuscript (Gorski and others, 2023)
   -
-    data-name: 03_model/out/Run_Manuscript_Results/**/losses.png
+    data-name: 03_model/out/Run_Manuscript_Results/{replicate}/losses.png
     data-description: >-
-      XX
+       A plot of the training validation losses for each epoch of the indicated replicate of the model run (run_id='Run_Manuscript_Results') published in the associated manuscript (Gorski and others, 2023)g
   -
-    data-name: 03_model/out/Run_Manuscript_Results/**/model_param_output.txt
+    data-name: 03_model/out/Run_Manuscript_Results/{replicate}/model_param_output.txt
     data-description: >-
-      XX
+      A parameter file that shows the model hyperparameters and other modeling parameters used during the training of each replicate of the model run (run_id='Run_Manuscript_Results') published in the associated manuscript (Gorski and others, 2023).
   -
-    data-name: 03_model/out/Run_Manuscript_Results/**/weights.pt
+    data-name: 03_model/out/Run_Manuscript_Results/{replicate}/weights.pt
     data-description: >-
-      XX
+      The trained weights for each replicate of the model run (run_id='Run_Manuscript_Results') published in the associated manuscript (Gorski and others, 2023).
   -
     data-name: 04_analysis
     data-description: >-
@@ -384,23 +383,23 @@ entities:
   -
     data-name: 04_analysis/src/XAI_functions.py
     data-description: >-
-      XX
+      A python script with functions for applying XAI techniques to the model.
   -
     data-name: 04_analysis/src/estuary_salinity_functional_performance_func.py
     data-description: >-
-      XX
+      A python script that executes the functional performance calculations for the model output and COAWST model output.
   -
     data-name: 04_analysis/src/it_functions.py
     data-description: >-
-      XX
+      A python script with functions to calculate information theory based metrics such as mutual information and transfer entropy.
   -
     data-name: 04_analysis/src/results.R
     data-description: >-
-      XX
+      An R script for generating the figures from the manuscript.
   -
     data-name: 04_analysis/src/results_functions.R
     data-description: >-
-      XX
+      An R script with functions to use in results.R for generating the figures from the manuscript.
   -
     data-name: 04_analysis/out
     data-description: >-
@@ -409,21 +408,21 @@ entities:
   -
     data-name: 04_analysis/out/Test_run_functional_performance_df.csv
     data-description: >-
-      XX
+      A csv with functional performance calculations for each source/sink/year combination by subtracting the transfer entropy of the modeled salt front location from the transfer entropy of the observed salt front location.
     attributes: 
     -
       attr-label: lag
       attr-def: >-
-        XX
+        The number of timestamps (days) to lag the sink from the source for the transfer entropy calculation.
       attr-defs: >-
         This release
       data-min: 0
       data-max: 9
-      data-units: NA
+      data-units: days
     -
       attr-label: year
       attr-def: >-
-        XX
+        The year to run the transfer entropy calculations for.
       attr-defs: >-
         This release
       data-min: 2001
@@ -432,7 +431,7 @@ entities:
     -
       attr-label: source
       attr-def: >-
-        XX
+        List of column names to use as sources.
       attr-defs: >-
         This release
       data-min: NA
@@ -441,16 +440,16 @@ entities:
     -
       attr-label: Func_Perf
       attr-def: >-
-        XX
+        The calculated fucntional performance.
       attr-defs: >-
         This release
       data-min: -0.227543205
       data-max: 0.145496753
-      data-units: XX
+      data-units: NA
     -
       attr-label: model
       attr-def: >-
-        XX
+        The name of the model that is being assessed.
       attr-defs: >-
         This release
       data-min: NA
@@ -459,21 +458,21 @@ entities:
   -
     data-name: 04_analysis/out/Test_run_it_df.csv
     data-description: >-
-      XX
+      A csv produced by the calc_it_metrics_for_pairs function in estuary_salinity_functional_performance_func.py script
     attributes: 
     -
       attr-label: MI
       attr-def: >-
-        XX
+        Mutual information between source and sink.
       attr-defs: >-
         This release
       data-min: 0.111523764
       data-max: 0.493328032
-      data-units: XX
+      data-units: NA
     -
       attr-label: MIcrit
       attr-def: >-
-        XX
+        The significance threshold for mutual information set by the user default 0.05
       attr-defs: >-
         This release
       data-min: 0.070052695
@@ -482,34 +481,34 @@ entities:
     -
       attr-label: TE
       attr-def: >-
-        XX
+        Transfer entropy between source and sink.
       attr-defs: >-
         This release
       data-min: -3.00461E-16
       data-max: 0.50502906
-      data-units: XX
+      data-units: NA
     -
       attr-label: TEcrit
       attr-def: >-
-        XX
+        The significance threshold for transfer entropy set by the user default 0.05
       attr-defs: >-
         This release
       data-min: 0
       data-max: 0.567124899
-      data-units: XX
+      data-units: NA
     -
       attr-label: corr
       attr-def: >-
-        XX
+        Pearson correlation coefficient between source and sink.
       attr-defs: >-
         This release
       data-min: -0.903492321
       data-max: -0.140221919
-      data-units: XX
+      data-units: NA
     -
       attr-label: source
       attr-def: >-
-        XX
+        Source variable (X) used for information theory calculations.
       attr-defs: >-
         This release
       data-min: NA
@@ -518,7 +517,7 @@ entities:
     -
       attr-label: sink
       attr-def: >-
-        XX
+        Sink variable (Y) used for information theory calculations.
       attr-defs: >-
         This release
       data-min: NA
@@ -527,7 +526,7 @@ entities:
     -
       attr-label: year
       attr-def: >-
-        XX
+        Year used for information theory calculations.
       attr-defs: >-
         This release
       data-min: 2001
@@ -536,12 +535,12 @@ entities:
     -
       attr-label: lag
       attr-def: >-
-        XX
+        Time lag for information theory calculations.
       attr-defs: >-
         This release
       data-min: 0
       data-max: 9
-      data-units: NA
+      data-units: days
 
 purpose: This release provides code and data for running a machine learning model to predict estuary salinity and using information theory, explainable AI, and comparison to other modeling approaches for analysis. 
 start-date: 20000101
